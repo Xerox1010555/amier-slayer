@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none'" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Amier — Full-Stack Web Developer</title>
+  <meta name="description" content="Amier — Full-Stack Web Developer crafting high-performance, scalable, modern web applications. Pixel-perfect front-ends, secure back-ends, end-to-end delivery. Available for hire worldwide." />
+  <meta name="theme-color" content="#0b0b0d" />
+  <meta name="author" content="Amier" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="./" />
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Amier" />
+  <meta property="og:title" content="Amier — Full-Stack Web Developer" />
+  <meta property="og:description" content="Transforming ideas into high-performance, scalable, modern web applications — pixel-perfect interfaces, secure back-ends, end-to-end delivery." />
+  <meta property="og:image" content="me.jpg" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Amier — Full-Stack Web Developer" />
+  <meta name="twitter:description" content="Pixel-perfect front-ends. Secure back-ends. End-to-end delivery." />
+  <meta name="twitter:image" content="me.jpg" />
+
+  <!-- Favicon: pixel "A." -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23111111'/%3E%3Cpath d='M9 24 L16 8 L23 24 M12.2 19.5 h7.6' stroke='%23f1f1ee' stroke-width='2.6' fill='none'/%3E%3Crect x='24.5' y='22' width='3' height='3' fill='%2378b743'/%3E%3C/svg%3E" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800;900&family=IBM+Plex+Mono:wght@400;500&family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Amier",
+    "jobTitle": "Full-Stack Web Developer",
+    "email": "abddo4443@gmail.com",
+    "image": "me.jpg",
+    "sameAs": [
+      "https://github.com/Xerox1010555",
+      "https://linkedin.com/in/Amier",
+      "https://t.me/Amier1t5",
+      "https://wa.me/201008655235"
+    ],
+    "knowsAbout": ["Web Development","Front-End","Back-End","REST APIs","Node.js","React.js","PostgreSQL","MongoDB","Three.js","UI/UX"],
+    "worksFor": { "@type": "Organization", "name": "Freelance / Self-Employed" }
+  }
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <a class="skip" href="#main">skip to content</a>
+
+  <!-- ============ TOPBAR ============ -->
+  <header class="topbar" id="top">
+    <a class="brand" href="#top">AMIER<span class="dot ink">.</span></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#about"      data-nav="about">About</a>
+      <a href="#experience" data-nav="experience">Experience</a>
+      <a href="#stack"      data-nav="stack">Stack</a>
+      <a href="#projects"   data-nav="projects">Projects</a>
+      <a href="#reviews"    data-nav="reviews">Reviews</a>
+      <a href="#contact"    data-nav="contact">Contact</a>
+    </nav>
+    <span class="top-meta mono" aria-hidden="true">v3.0&nbsp;·&nbsp;2026</span>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero hero--demon" id="hero" aria-label="Intro">
+      <!-- ambient crimson ash + one-time blade sweep -->
+      <div class="hero-abyss" aria-hidden="true">
+        <i class="ember"></i><i class="ember"></i><i class="ember"></i>
+        <i class="ember"></i><i class="ember"></i><i class="ember"></i>
+      </div>
+      <i class="slash-sweep" aria-hidden="true"></i>
+      <span class="kanji-ghost" aria-hidden="true">刃</span>
+      <span class="side-ja mono" aria-hidden="true">アミエ · full-stack bladesmith</span>
+
+      <div class="hero-annot hero-annot--tl mono" data-exit aria-hidden="true">
+        <span>// amier — portfolio</span>
+        <span>// full-stack web developer</span>
+        <span>// forged, never copied</span>
+      </div>
+      <div class="hero-annot hero-annot--tr mono" data-exit aria-hidden="true">
+        <span>remote · worldwide</span>
+        <span>open to work</span>
+        <span class="pulse-dot" title="Available"></span>
+      </div>
+      <div class="hero-annot hero-annot--br mono" data-exit aria-hidden="true">
+        <span>last build — 2026.11</span>
+      </div>
+
+      <!-- the waving slayer -->
+      <div class="hero-figure" data-exit aria-hidden="true">
+        <div class="fig-float">
+          <div class="slayer-card">
+            <img src="tanjiro.png" alt="Amier — the demon slayer greets you" width="340" height="426" decoding="async" loading="eager" />
+            <i class="slash-mark slash-mark--a" aria-hidden="true"></i>
+            <i class="slash-mark slash-mark--b" aria-hidden="true"></i>
+            <i class="slash-mark slash-mark--c" aria-hidden="true"></i>
+          </div>
+          <div class="figure-bubble">
+            <strong>Hi!</strong>
+            <span class="mono">amier here — let's forge yours</span>
+          </div>
+        </div>
+      </div>
+
+      <h1 class="hero-name" data-exit>
+        <span class="name-ink" data-anim="chars">Amier</span>
+        <span class="name-echo" aria-hidden="true">Amier</span>
+      </h1>
+
+      <p class="hero-role mono" data-anim="wbrick" data-exit>
+        full-stack web developer&nbsp;·&nbsp;pixel-perfect front-ends&nbsp;·&nbsp;secure back-ends&nbsp;·&nbsp;e2e delivery
+      </p>
+
+      <div class="hero-icons" data-anim="group" data-exit>
+        <a class="mini-chip" href="https://github.com/Xerox1010555" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-1.94c-3.2.7-3.87-1.54-3.87-1.54-.53-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.72-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.8 1.18 1.83 1.18 3.09 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.05.78 2.13v3.16c0 .31.2.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+        </a>
+        <a class="mini-chip" href="https://t.me/Amier1t5" target="_blank" rel="noopener noreferrer" aria-label="Telegram" title="Telegram">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M21.9 3.3 1.9 11.2c-1.2.5-1.1 1.6-.2 1.9l5 1.6 1.9 5.9c.3.9 1 1 1.7.4l2.7-2.2 5.1 3.8c.9.5 1.5.2 1.7-.8l3-16c.2-1-.5-1.9-1.9-1.5zM8.5 13.7l8.9-5.6c.4-.3.8-.1.5.2l-7.3 6.6-.3 3.1-1.8-4.3z"/></svg>
+        </a>
+        <a class="mini-chip" href="https://wa.me/201008655235?text=Hello%20Amier%2C%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.6 14.2c-.2.7-1.2 1.3-2 1.3-.5 0-1.2 0-3.2-.9-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1-1.4-1-2.7s.7-1.9 1-2.2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6c-.1.2-.3.4-.1.7.2.3.8 1.4 1.8 2.2 1.2 1.1 2.2 1.4 2.5 1.6.3.1.5.1.6-.1l.9-1c.2-.2.4-.2.6-.1l2 1c.3.1.5.2.5.4.1.3.1.8-.1 1.3z"/></svg>
+        </a>
+        <a class="mini-chip" id="mailChip" href="mailto:abddo4443@gmail.com" aria-label="Email" title="Email">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+        </a>
+      </div>
+
+      <div class="hero-cta reveal" data-anim="group" data-exit>
+        <a class="btn btn-ink" href="assets/cv.pdf" download>
+          Download CV
+          <span class="btn-arrow">↓</span>
+        </a>
+        <a class="btn btn-ghost" href="#projects">
+          See the work
+          <span class="btn-arrow">↓</span>
+        </a>
+      </div>
+
+      <div class="hero-stats" data-exit role="list">
+        <div class="stat reveal" data-anim="pop" data-delay="0" role="listitem">
+          <span class="stat-num" data-count="50" data-suffix="+">0</span>
+          <span class="stat-label mono">projects shipped</span>
+        </div>
+        <div class="stat reveal" data-anim="pop" data-delay="0.12" role="listitem">
+          <span class="stat-num" data-count="30" data-suffix="+">0</span>
+          <span class="stat-label mono">happy clients</span>
+        </div>
+        <div class="stat reveal" data-anim="pop" data-delay="0.24" role="listitem">
+          <span class="stat-num" data-count="4" data-suffix="">0</span>
+          <span class="stat-label mono">years of building</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track mono">
+        <span>React</span><span>✦</span><span>Node.js</span><span>✦</span><span>PostgreSQL</span><span>✦</span><span>Express</span><span>✦</span><span>MongoDB</span><span>✦</span><span>Three.js</span><span>✦</span><span>Tailwind</span><span>✦</span><span>REST APIs</span><span>✦</span><span>Vercel</span><span>✦</span><span>Git</span><span>✦</span>
+        <span>React</span><span>✦</span><span>Node.js</span><span>✦</span><span>PostgreSQL</span><span>✦</span><span>Express</span><span>✦</span><span>MongoDB</span><span>✦</span><span>Three.js</span><span>✦</span><span>Tailwind</span><span>✦</span><span>REST APIs</span><span>✦</span><span>Vercel</span><span>✦</span><span>Git</span><span>✦</span>
+      </div>
+    </div>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about">
+      <header class="section-head">
+        <div class="head-row">
+          <h2 class="giant reveal" data-anim="chars">About me<em class="dot">.</em></h2>
+          <span class="fig mono" data-anim="up">fig. 01 — who's behind the pixels</span>
+        </div>
+      </header>
+
+      <div class="about-grid">
+        <div class="about-photo reveal">
+          <figure class="photo-card" data-anim="frame">
+            <div class="photo-matte">
+              <div class="photo-frame">
+                <img src="me.jpg" alt="Black & white studio photo of Amier — full-stack web developer" width="1200" height="1618" loading="lazy" decoding="async" />
+              </div>
+              <div class="plate mono"><span class="plate-name">AMIER</span><span class="plate-dot">▪</span><span>FULL-STACK WEB DEVELOPER</span></div>
+            </div>
+            <figcaption class="mono">fig. 00 — the maker. hover for color ↑</figcaption>
+          </figure>
+        </div>
+
+        <div class="about-copy">
+          <p class="reveal">
+            I'm <strong>Amier</strong>, a full-stack web developer passionate about transforming ideas into
+            <span class="hl">polished, production-ready digital products</span>. I obsess over clean,
+            maintainable code and architecture that scales gracefully as your product grows.
+          </p>
+          <p class="reveal">
+            On the front end, I build <span class="hl">pixel-perfect, responsive interfaces</span> with
+            meticulous attention to typography, motion, and accessibility. On the back end, I engineer
+            <span class="hl">secure APIs, robust systems, and well-modeled databases</span> that hold up
+            under real-world traffic.
+          </p>
+          <p class="reveal">
+            From the first sketch to the final deploy, I deliver <span class="hl">end-to-end web
+            solutions</span> — fast, accessible, secure, and beautifully designed.
+            <span class="no-template">No templates, no shortcuts, just thoughtful engineering from scratch.</span>
+          </p>
+
+          <dl class="facts mono reveal" data-anim="group">
+            <div><dt>location</dt><dd>Remote · Worldwide</dd></div>
+            <div><dt>response</dt><dd>Within 24 hours</dd></div>
+            <div><dt>email</dt><dd><a href="mailto:abddo4443@gmail.com">abddo4443@gmail.com</a></dd></div>
+            <div><dt>languages</dt><dd>AR / EN</dd></div>
+          </dl>
+
+          <a class="btn btn-ink" href="assets/cv.pdf" download>Download CV <span class="btn-arrow">↓</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section" id="experience">
+      <header class="section-head">
+        <div class="head-row">
+          <h2 class="giant reveal" data-anim="chars">Experience<em class="dot">.</em></h2>
+          <span class="fig mono" data-anim="up">fig. 02 — what I actually do</span>
+        </div>
+      </header>
+
+      <ol class="ledger">
+        <li class="ledger-row reveal" data-anim="mask">
+          <span class="num mono" aria-hidden="true">01</span>
+          <div class="row-main">
+            <h3>Full-Stack Web Development</h3>
+            <p>Custom websites and applications built from scratch — front-end, back-end, database, and deployment, all under one roof.</p>
+          </div>
+          <span class="row-tag mono">from scratch</span>
+        </li>
+        <li class="ledger-row reveal" data-anim="mask">
+          <span class="num mono" aria-hidden="true">02</span>
+          <div class="row-main">
+            <h3>Front-End UI/UX Engineering</h3>
+            <p>Responsive, pixel-perfect, interactive interfaces with thoughtful motion and accessibility baked in from the start.</p>
+          </div>
+          <span class="row-tag mono">pixel-perfect</span>
+        </li>
+        <li class="ledger-row reveal" data-anim="mask">
+          <span class="num mono" aria-hidden="true">03</span>
+          <div class="row-main">
+            <h3>Back-End &amp; API Integration</h3>
+            <p>RESTful APIs, server architecture, authentication, and database integration designed for reliability and scale.</p>
+          </div>
+          <span class="row-tag mono">secure &amp; scalable</span>
+        </li>
+        <li class="ledger-row reveal" data-anim="mask">
+          <span class="num mono" aria-hidden="true">04</span>
+          <div class="row-main">
+            <h3>Performance &amp; Optimization</h3>
+            <p>Speed tuning, technical SEO, and secure code architecture so your product feels instant and stays protected.</p>
+          </div>
+          <span class="row-tag mono">fast &amp; safe</span>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ STACK ============ -->
+    <section class="section" id="stack">
+      <header class="section-head">
+        <div class="head-row">
+          <h2 class="giant reveal" data-anim="chars">Stack<em class="dot">.</em></h2>
+          <span class="fig mono" data-anim="up">fig. 03 — tools under the hood</span>
+        </div>
+      </header>
+
+      <div class="stack-grid">
+        <article class="stack-col reveal" data-anim="pop">
+          <div class="stack-icon" aria-hidden="true">
+            <!-- pixel monitor -->
+            <svg viewBox="0 0 12 12" shape-rendering="crispEdges"><rect x="1" y="2" width="10" height="7" fill="#78b743"/><rect x="2" y="3" width="8" height="5" fill="#eaf3e2"/><rect x="3" y="4" width="3" height="1" fill="#5a8a3a"/><rect x="3" y="6" width="6" height="1" fill="#a9c697"/><rect x="5" y="9" width="2" height="1" fill="#4e7031"/><rect x="3" y="10" width="6" height="1" fill="#78b743"/></svg>
+          </div>
+          <h3>Front-End</h3>
+          <p class="stack-desc">Pixel-perfect, responsive interfaces with modern frameworks and motion design.</p>
+          <ul class="chips mono reveal" data-anim="group">
+            <li>HTML5</li><li>CSS3</li><li>JavaScript (ES6+)</li><li>React.js</li><li>Tailwind CSS</li><li>Responsive Design</li>
+          </ul>
+        </article>
+
+        <article class="stack-col reveal" data-anim="pop">
+          <div class="stack-icon" aria-hidden="true">
+            <!-- pixel server -->
+            <svg viewBox="0 0 12 12" shape-rendering="crispEdges"><rect x="1" y="1" width="10" height="3" fill="#35c4d8"/><rect x="1" y="5" width="10" height="3" fill="#2aa8bd"/><rect x="1" y="9" width="10" height="2" fill="#2695a9"/><rect x="2" y="2" width="1" height="1" fill="#eaf7fa"/><rect x="2" y="6" width="1" height="1" fill="#eaf7fa"/><rect x="2" y="9.5" width="1" height="1" fill="#eaf7fa"/><rect x="9" y="2" width="1" height="1" fill="#0f5b66"/><rect x="9" y="6" width="1" height="1" fill="#0f5b66"/></svg>
+          </div>
+          <h3>Back-End</h3>
+          <p class="stack-desc">Scalable server architecture, secure APIs, and robust system design.</p>
+          <ul class="chips mono reveal" data-anim="group">
+            <li>Node.js</li><li>Express.js</li><li>RESTful APIs</li><li>System Architecture</li>
+          </ul>
+        </article>
+
+        <article class="stack-col reveal" data-anim="pop">
+          <div class="stack-icon" aria-hidden="true">
+            <!-- pixel database (gold ore-ish) -->
+            <svg viewBox="0 0 12 12" shape-rendering="crispEdges"><rect x="1" y="1" width="10" height="2" fill="#f2c037"/><rect x="1" y="4" width="10" height="2" fill="#e0a825"/><rect x="1" y="7" width="10" height="2" fill="#d49721"/><rect x="2" y="2" width="1" height="1" fill="#fff3d1"/><rect x="7" y="4.5" width="1" height="1" fill="#fff3d1"/><rect x="4" y="7.5" width="1" height="1" fill="#fff3d1"/><rect x="10" y="2" width="1" height="1" fill="#b78518"/><rect x="10" y="5" width="1" height="1" fill="#b78518"/><rect x="10" y="8" width="1" height="1" fill="#b78518"/></svg>
+          </div>
+          <h3>Databases &amp; Tools</h3>
+          <p class="stack-desc">Data modeling, version control, and deployment pipelines that just work.</p>
+          <ul class="chips mono reveal" data-anim="group">
+            <li>SQL</li><li>PostgreSQL</li><li>MySQL</li><li>MongoDB</li><li>Git &amp; GitHub</li><li>Vercel</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section" id="projects">
+      <header class="section-head">
+        <div class="head-row">
+          <h2 class="giant reveal" data-anim="chars">Projects<em class="dot">.</em></h2>
+          <span class="fig mono" data-anim="up">fig. 04 — selected builds · 2020 → 2026</span>
+        </div>
+      </header>
+
+      <div class="proj-grid">
+
+        <!-- 01 OK Store -->
+        <article class="proj reveal" data-anim="card" id="p-okstore">
+          <div class="proj-shot shot-okstore" aria-hidden="true">
+            <div class="chrome"><i></i><i></i><i></i><span class="url mono">ok-store — phase 0</span></div>
+            <div class="shot-body">
+              <span class="shot-logo">OK<span class="blink">_</span></span>
+              <div class="shot-bars"><i style="width:62%"></i><i style="width:44%"></i><i style="width:73%"></i></div>
+              <div class="shot-cards"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-meta mono">build · 01 — e-commerce platform</div>
+            <h3>OK Store — Premium Tech &amp; Hardware E-Commerce</h3>
+            <p>Premium e-commerce foundation for high-end PC parts and custom rigs — design system, faceted catalog, product detail pages, and a pure compatibility engine powering the upcoming Custom PC Builder.</p>
+            <ul class="tags mono"><li>Next.js 14</li><li>TypeScript</li><li>Tailwind</li><li>npm workspaces</li><li>Vitest</li></ul>
+            <div class="proj-actions">
+              <span class="btn btn-tag mono">in development</span>
+              <button class="btn btn-ghost btn-mini" data-copy="ok-store" type="button">details ↗</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 02 Oyster & Co -->
+        <article class="proj reveal" data-anim="card" id="p-oyster">
+          <div class="proj-shot shot-oyster" aria-hidden="true">
+            <div class="chrome"><i></i><i></i><i></i><span class="url mono">oyster &amp; co — storefront</span></div>
+            <div class="shot-body shot-center">
+              <span class="shot-serif">OYSTER &amp; CO.</span>
+              <div class="shot-rules"><i></i><i></i></div>
+              <div class="shot-cards gold"><i></i><i></i></div>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-meta mono">build · 02 — production platform</div>
+            <h3>Oyster &amp; Co. — Watch E-Commerce Platform</h3>
+            <p>Full production platform for a luxury watchmaker — Next.js 15 storefront, Prisma catalog, admin panel for orders &amp; bookings, email and exchange-rate integrations.</p>
+            <ul class="tags mono"><li>Next.js 15</li><li>React 19</li><li>Prisma</li><li>Three.js</li><li>GSAP</li></ul>
+            <div class="proj-actions">
+              <span class="btn btn-tag mono">production stack</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 03 Crown & Co -->
+        <article class="proj reveal" data-anim="card" id="p-crown">
+          <div class="proj-shot shot-crown" aria-hidden="true">
+            <div class="chrome"><i></i><i></i><i></i><span class="url mono">crown &amp; co — 3d boutique</span></div>
+            <div class="shot-body shot-center">
+              <span class="shot-serif gold-text">CROWN &amp; CO.</span>
+              <div class="shot-watch" aria-hidden="true"><i class="bezel"></i><i class="dial"></i><i class="hands"></i></div>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-meta mono">build · 03 — 3d atelier</div>
+            <h3>Crown &amp; Co. — 3D Luxury Watch Boutique</h3>
+            <p>Concept boutique where every watch is procedurally built in the browser with three.js — bilingual AR/EN with full RTL, four currencies, and a live configurator.</p>
+            <ul class="tags mono"><li>Three.js</li><li>GSAP</li><li>i18n + RTL</li><li>3D Configurator</li></ul>
+            <div class="proj-actions">
+              <span class="btn btn-tag mono">concept demo</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 04 GRAVEN -->
+        <article class="proj reveal" data-anim="card" id="p-graven">
+          <div class="proj-shot shot-graven" aria-hidden="true">
+            <div class="chrome"><i></i><i></i><i></i><span class="url mono">graven — drafting works</span></div>
+            <div class="shot-body shot-blueprint">
+              <span class="bp-lines mono">A0 · scale 1:1</span>
+              <svg viewBox="0 0 120 66" aria-hidden="true" class="bp-svg"><g fill="none" stroke="#dfe9f5" stroke-width="1"><rect x="24" y="12" width="72" height="42"/><line x1="24" y1="33" x2="96" y2="33"/><line x1="60" y1="12" x2="60" y2="54"/><line x1="10" y1="4" x2="110" y2="4"/><line x1="10" y1="4" x2="10" y2="62"/><line x1="110" y1="4" x2="110" y2="62"/><line x1="24" y1="20" x2="52" y2="20" stroke="#78b743"/><line x1="96" y1="26" x2="96" y2="46" stroke="#f2c037"/></g></svg>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-meta mono">build · 04 — cinematic landing</div>
+            <h3>GRAVEN / Drafting Works</h3>
+            <p>Cinematic long-scroll landing where scroll scrubs a blueprint video with spring physics — contact form with Zod + Turnstile, Plausible analytics, Playwright visual tests and full CI/CD.</p>
+            <ul class="tags mono"><li>React 18</li><li>TypeScript</li><li>Vite</li><li>Playwright</li><li>CI/CD</li></ul>
+            <div class="proj-actions">
+              <span class="btn btn-tag mono">agency build</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 05 Diet Soda -->
+        <article class="proj reveal" data-anim="card" id="p-diet">
+          <div class="proj-shot shot-diet" aria-hidden="true">
+            <div class="chrome"><i></i><i></i><i></i><span class="url mono">diet soda — 3d landing</span></div>
+            <div class="shot-body diet-body">
+              <span class="soda-can"><i></i></span>
+              <div class="diet-bubbles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-meta mono">build · 05 — immersive product page</div>
+            <h3>Diet Soda — Premium 3D Product Landing</h3>
+            <p>Immersive landing with an interactive 3D can (model-viewer + AR), flavor-switching theme engine, GSAP scroll choreography — WCAG 2.1 AA and offline-capable PWA.</p>
+            <ul class="tags mono"><li>Lit 3</li><li>model-viewer</li><li>GSAP</li><li>PWA</li><li>WCAG AA</li></ul>
+            <div class="proj-actions">
+              <span class="btn btn-tag mono">interactive 3d</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 06 Aurelia -->
+        <article class="proj reveal" data-anim="card" id="p-aurelia">
+          <div class="proj-shot shot-aurelia" aria-hidden="true">
+            <div class="chrome"><i></i><i></i><i></i><span class="url mono">aurelia — haute horlogerie</span></div>
+            <div class="shot-body shot-center dark">
+              <span class="shot-serif gold-text">AURELIA</span>
+              <span class="shot-sub mono">time is the ultimate luxury</span>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-meta mono">build · 06 — single-file boutique</div>
+            <h3>AURELIA — Haute Horlogerie in 3D</h3>
+            <p>Single-file concept boutique with four legendary references rendered in real-time 3D — tightly hardened with a strict CSP, live configuration and four supported currencies.</p>
+            <ul class="tags mono"><li>Three.js</li><li>Strict CSP</li><li>3D</li><li>E-commerce</li></ul>
+            <div class="proj-actions">
+              <span class="btn btn-tag mono">self-contained</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 07 Solo System -->
+        <article class="proj reveal" data-anim="card" id="p-solo">
+          <div class="proj-shot shot-solo" aria-hidden="true">
+            <div class="chrome"><i></i><i></i><i></i><span class="url mono">solo system — v7.0</span></div>
+            <div class="shot-body shot-center dark violet">
+              <svg class="solo-heart" viewBox="0 0 10 9" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="3" height="1" fill="#78b743"/><rect x="6" y="1" width="3" height="1" fill="#78b743"/><rect x="0" y="2" width="10" height="2" fill="#78b743"/><rect x="1" y="4" width="8" height="2" fill="#78b743"/><rect x="2" y="6" width="6" height="2" fill="#5fa033"/><rect x="3" y="8" width="4" height="1" fill="#5fa033"/></svg>
+              <span class="shot-sub mono cyan">S Y S T E M — 7.0</span>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-meta mono">build · 07 — web + windows + android</div>
+            <h3>Solo System — Habit &amp; Quest Tracker</h3>
+            <p>Solo-Leveling-inspired habit and task system — local player accounts with salted hashes, weekly analytics with a 365-day map, 22 themes, and packaged builds for Windows + signed Android APK.</p>
+            <ul class="tags mono"><li>Vanilla JS</li><li>PWA</li><li>Offline-first</li><li>Windows</li><li>Android</li></ul>
+            <div class="proj-actions">
+              <span class="btn btn-tag mono">shipped v7.0</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 08 Dashboard & E-Commerce (live) -->
+        <article class="proj reveal" data-anim="card" id="p-dashboard">
+          <div class="proj-shot shot-dash">
+            <div class="chrome"><i></i><i></i><i></i><span class="url mono">azure-theta-87.vercel.app</span></div>
+            <div class="shot-body">
+              <span class="dash-side" aria-hidden="true"></span>
+              <div class="dash-main">
+                <div class="shot-bars light"><i style="width:70%"></i><i style="width:38%"></i><i style="width:56%"></i></div>
+                <div class="shot-cards blue"><i></i><i></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-meta mono">build · 08 — web app <b class="dot-label">live</b></div>
+            <h3>Modern Dashboard &amp; E-Commerce App</h3>
+            <p>High-performance interactive web application — an intuitive dashboard interface, seamless UI state management, and full responsiveness across every screen size.</p>
+            <ul class="tags mono"><li>React</li><li>Node.js</li><li>REST API</li><li>Tailwind</li><li>Vercel</li></ul>
+            <div class="proj-actions">
+              <a class="btn btn-ink btn-mini" href="https://azure-theta-87.vercel.app/" target="_blank" rel="noopener noreferrer">live demo ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 09 Carpentry site (live) -->
+        <article class="proj reveal" data-anim="card" id="p-carpentry">
+          <div class="proj-shot shot-carp">
+            <div class="chrome"><i></i><i></i><i></i><span class="url mono">ok-web-blue.vercel.app</span></div>
+            <div class="shot-body wood-body">
+              <div class="wood-grain" aria-hidden="true"><i></i><i></i></div>
+              <div class="shot-bars dark"><i style="width:52%"></i><i style="width:66%"></i></div>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-meta mono">build · 09 — client website <b class="dot-label">live</b></div>
+            <h3>Carpentry &amp; Decor — Client Business Site</h3>
+            <p>Complete commercial site for a local carpentry &amp; decor business — portfolio showcase, customer service inquiries, and lead-to-booking conversion flow.</p>
+            <ul class="tags mono"><li>JavaScript</li><li>Express.js</li><li>Full-Stack</li><li>Responsive UI</li></ul>
+            <div class="proj-actions">
+              <a class="btn btn-ink btn-mini" href="https://ok-web-blue.vercel.app" target="_blank" rel="noopener noreferrer">live demo ↗</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ REVIEWS ============ -->
+    <section class="section" id="reviews">
+      <header class="section-head">
+        <div class="head-row">
+          <h2 class="giant reveal" data-anim="chars">Reviews<em class="dot">.</em></h2>
+          <span class="fig mono" data-anim="up">fig. 05 — what clients say</span>
+        </div>
+      </header>
+
+      <div class="review-grid">
+        <blockquote class="review reveal" data-anim="card">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>“Amier delivered our dashboard two weeks ahead of schedule. The code is clean, well-documented, and production-ready.”</p>
+          <footer><span class="avatar">SC</span><cite><b>Sarah Chen</b> — CTO, StartupX</cite></footer>
+        </blockquote>
+        <blockquote class="review reveal" data-anim="card">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>“Exceptional attention to detail and accessibility. Our conversion rate improved by 30% after the redesign.”</p>
+          <footer><span class="avatar">MR</span><cite><b>Marcus Rodriguez</b> — Founder, DevShop</cite></footer>
+        </blockquote>
+        <blockquote class="review reveal" data-anim="card">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>“Secure, scalable, and beautifully designed. Amier is a full-stack engineer you can trust with your product.”</p>
+          <footer><span class="avatar">FA</span><cite><b>Fatima Al-Sayed</b> — Product Manager, TechFlow</cite></footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ============ WRITING ============ -->
+    <section class="section" id="writing">
+      <header class="section-head">
+        <div class="head-row">
+          <h2 class="giant reveal" data-anim="chars">Writing<em class="dot">.</em></h2>
+          <span class="fig mono" data-anim="up">fig. 06 — notes worth sharing</span>
+        </div>
+      </header>
+
+      <ol class="ledger">
+        <li class="ledger-row reveal" data-anim="mask">
+          <span class="num mono" aria-hidden="true">Jan ’26</span>
+          <div class="row-main">
+            <h3><a href="#" aria-label="Article: Building Secure REST APIs with Node.js and Express">Building Secure REST APIs with Node.js and Express</a></h3>
+            <p>Authentication, rate limiting, input validation, and best practices for production-grade APIs.</p>
+          </div>
+          <span class="row-tag mono">8 min · security</span>
+        </li>
+        <li class="ledger-row reveal" data-anim="mask">
+          <span class="num mono" aria-hidden="true">Feb ’26</span>
+          <div class="row-main">
+            <h3><a href="#" aria-label="Article: Web Performance Optimization — Core Web Vitals in 2026">Web Performance Optimization: Core Web Vitals in 2026</a></h3>
+            <p>How to measure and improve LCP, CLS, and INP for better SEO and user experience.</p>
+          </div>
+          <span class="row-tag mono">6 min · performance</span>
+        </li>
+        <li class="ledger-row reveal" data-anim="mask">
+          <span class="num mono" aria-hidden="true">Mar ’26</span>
+          <div class="row-main">
+            <h3><a href="#" aria-label="Article: Accessible Dark Mode with CSS Custom Properties">Accessible Dark Mode with CSS Custom Properties</a></h3>
+            <p>A system-preference-aware dark theme with manual override and localStorage persistence.</p>
+          </div>
+          <span class="row-tag mono">5 min · css</span>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section section--contact" id="contact">
+      <header class="section-head">
+        <div class="head-row">
+          <h2 class="giant reveal" data-anim="chars">Get in touch<em class="dot">.</em></h2>
+          <span class="fig mono" data-anim="up">fig. 07 — usually replies within 24h</span>
+        </div>
+      </header>
+
+      <p class="contact-sub" data-anim="wbrick">
+        Have an idea that deserves to be built properly? Tell me about it —
+        <strong>no templates, no shortcuts</strong>, just thoughtful engineering from scratch.
+      </p>
+
+      <div class="contact-mini reveal" data-anim="group">
+        <div class="cm-col">
+          <a class="cm-row" href="mailto:abddo4443@gmail.com">
+            <span class="cm-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+            </span>
+            <span class="cm-val" id="mailValue">abddo4443@gmail.com</span>
+            <button class="c-copy mono" type="button" data-copy="abddo4443@gmail.com" aria-label="Copy email">copy</button>
+          </a>
+          <a class="cm-row" href="https://wa.me/201008655235?text=Hello%20Amier%2C%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer">
+            <span class="cm-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.6 14.2c-.2.7-1.2 1.3-2 1.3-.5 0-1.2 0-3.2-.9-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1-1.4-1-2.7s.7-1.9 1-2.2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6c-.1.2-.3.4-.1.7.2.3.8 1.4 1.8 2.2 1.2 1.1 2.2 1.4 2.5 1.6.3.1.5.1.6-.1l.9-1c.2-.2.4-.2.6-.1l2 1c.3.1.5.2.5.4.1.3.1.8-.1 1.3z"/></svg>
+            </span>
+            <span class="cm-val">+20 100 865 5235</span>
+          </a>
+        </div>
+        <a class="btn btn-ink send-btn" href="mailto:abddo4443@gmail.com">Send me an email <span class="btn-arrow">→</span></a>
+      </div>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track mono">
+          <span class="ticker-half"><span>full-stack web developer</span><b>✦</b><span>ok store</span><b>✦</b><span>oyster-co</span><b>✦</b><span>crown watch boutique</span><b>✦</b><span>graven drafting works</span><b>✦</b><span>diet-soda</span><b>✦</b><span>aurelia</span><b>✦</b><span>solo-system</span><b>✦</b><span>azure dashboard</span><b>✦</b><span>carpentry workshop</span><b>✦</b><span>pixel-perfect front-ends</span><b>✦</b><span>hardened back-ends</span><b>✦</b></span>
+          <span class="ticker-half"><span>full-stack web developer</span><b>✦</b><span>ok store</span><b>✦</b><span>oyster-co</span><b>✦</b><span>crown watch boutique</span><b>✦</b><span>graven drafting works</span><b>✦</b><span>diet-soda</span><b>✦</b><span>aurelia</span><b>✦</b><span>solo-system</span><b>✦</b><span>azure dashboard</span><b>✦</b><span>carpentry workshop</span><b>✦</b><span>pixel-perfect front-ends</span><b>✦</b><span>hardened back-ends</span><b>✦</b></span>
+        </div>
+      </div>
+
+      <p class="statement reveal" data-anim="chars">
+        Let's build something <strong class="stamp">impactful</strong> together<em class="dot">.</em>
+      </p>
+
+      <div class="channels" data-anim="group">
+        <a class="channel" href="https://t.me/Amier1t5" target="_blank" rel="noopener noreferrer">
+          <span class="ch-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor"><path d="M21.9 3.3 1.9 11.2c-1.2.5-1.1 1.6-.2 1.9l5 1.6 1.9 5.9c.3.9 1 1 1.7.4l2.7-2.2 5.1 3.8c.9.5 1.5.2 1.7-.8l3-16c.2-1-.5-1.9-1.9-1.5zM8.5 13.7l8.9-5.6c.4-.3.8-.1.5.2l-7.3 6.6-.3 3.1-1.8-4.3z"/></svg>
+          </span>
+          <span class="ch-foot mono">telegram — @Amier1t5</span>
+        </a>
+        <a class="channel" href="https://linkedin.com/in/Amier" target="_blank" rel="noopener noreferrer">
+          <span class="ch-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+          </span>
+          <span class="ch-foot mono">linkedin — /in/Amier</span>
+        </a>
+        <a class="channel" href="mailto:abddo4443@gmail.com">
+          <span class="ch-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+          </span>
+          <span class="ch-foot mono">email — abddo4443@gmail.com</span>
+        </a>
+        <a class="channel" href="https://github.com/Xerox1010555" target="_blank" rel="noopener noreferrer">
+          <span class="ch-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-1.94c-3.2.7-3.87-1.54-3.87-1.54-.53-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.72-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.8 1.18 1.83 1.18 3.09 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.05.78 2.13v3.16c0 .31.2.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+          </span>
+          <span class="ch-foot mono">github — /Xerox1010555</span>
+        </a>
+        <a class="channel" href="https://wa.me/201008655235?text=Hello%20Amier%2C%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer">
+          <span class="ch-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.6 14.2c-.2.7-1.2 1.3-2 1.3-.5 0-1.2 0-3.2-.9-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1-1.4-1-2.7s.7-1.9 1-2.2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6c-.1.2-.3.4-.1.7.2.3.8 1.4 1.8 2.2 1.2 1.1 2.2 1.4 2.5 1.6.3.1.5.1.6-.1l.9-1c.2-.2.4-.2.6-.1l2 1c.3.1.5.2.5.4.1.3.1.8-.1 1.3z"/></svg>
+          </span>
+          <span class="ch-foot mono">whatsapp — +20 100 865 5235</span>
+        </a>
+      </div>
+
+      <div class="avail-badge reveal mono"><span class="pulse-dot"></span> available for hire — remote · worldwide</div>
+
+      <div class="ticker ticker--footer" aria-hidden="true">
+        <div class="ticker-track ticker-track--rev mono">
+          <span class="ticker-half"><span>let's build</span><b>✦</b><span>say hello</span><b>✦</b><span>ship it</span><b>✦</b><span>repeat</span><b>✦</b><span>remote · worldwide</span><b>✦</b><span>made in egypt</span><b>✦</b><span>open to work</span><b>✦</b><span>built from scratch</span><b>✦</b><span>no templates</span><b>✦</b><span>amier</span><b>✦</b></span>
+          <span class="ticker-half"><span>let's build</span><b>✦</b><span>say hello</span><b>✦</b><span>ship it</span><b>✦</b><span>repeat</span><b>✦</b><span>remote · worldwide</span><b>✦</b><span>made in egypt</span><b>✦</b><span>open to work</span><b>✦</b><span>built from scratch</span><b>✦</b><span>no templates</span><b>✦</b><span>amier</span><b>✦</b></span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer footer--dark">
+    <i class="footer-slash" aria-hidden="true"></i>
+    <span class="mono">© <span id="year">2026</span> Amier — forged &amp; built from scratch. no templates.</span>
+    <a class="totop mono" href="#top">back to top ↑</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

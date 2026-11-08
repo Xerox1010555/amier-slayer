@@ -1,0 +1,185 @@
+{
+  "site": {
+    "name": "Amier",
+    "role": "Full-Stack Web Developer",
+    "tagline": "Transforming ideas into high-performance, scalable, and modern web applications — pixel-perfect interfaces, secure back-ends, end-to-end delivery.",
+    "email": "abddo4443@gmail.com",
+    "whatsapp": "+20 100 865 5235",
+    "whatsappLink": "https://wa.me/201008655235?text=Hello%20Amier%2C%20I%20would%20like%20to%20discuss%20a%20project.",
+    "telegram": "@Amier1t5",
+    "telegramLink": "https://t.me/Amier1t5",
+    "location": "Remote · Worldwide",
+    "responseTime": "Within 24 hours",
+    "social": {
+      "github": "https://github.com/Xerox1010555",
+      "linkedin": "https://linkedin.com/in/Amier"
+    },
+    "cvUrl": "assets/cv.pdf",
+    "availableForHire": true
+  },
+  "stats": {
+    "projects": 50,
+    "clients": 30,
+    "years": 4
+  },
+  "skills": [
+    {
+      "category": "Front-End",
+      "desc": "Pixel-perfect, responsive interfaces with modern frameworks and motion design.",
+      "items": ["HTML5", "CSS3", "JavaScript (ES6+)", "React.js", "Tailwind CSS", "Responsive Design"]
+    },
+    {
+      "category": "Back-End",
+      "desc": "Scalable server architecture, secure APIs, and robust system design.",
+      "items": ["Node.js", "Express.js", "RESTful APIs", "System Architecture"]
+    },
+    {
+      "category": "Databases & Tools",
+      "desc": "Data modeling, version control, and deployment pipelines that just work.",
+      "items": ["SQL", "PostgreSQL", "MySQL", "MongoDB", "Git & GitHub", "Vercel Deployment"]
+    }
+  ],
+  "services": [
+    {
+      "number": "01",
+      "title": "Full-Stack Web Development",
+      "desc": "Custom websites and applications built from scratch — front-end, back-end, database, and deployment, all under one roof.",
+      "tag": "from scratch"
+    },
+    {
+      "number": "02",
+      "title": "Front-End UI/UX Engineering",
+      "desc": "Responsive, pixel-perfect, interactive interfaces with thoughtful motion and accessibility baked in from the start.",
+      "tag": "pixel-perfect"
+    },
+    {
+      "number": "03",
+      "title": "Back-End & API Integration",
+      "desc": "RESTful APIs, server architecture, authentication, and database integration designed for reliability and scale.",
+      "tag": "secure & scalable"
+    },
+    {
+      "number": "04",
+      "title": "Performance & Optimization",
+      "desc": "Speed tuning, technical SEO, and secure code architecture so your product feels instant and stays protected.",
+      "tag": "fast & safe"
+    }
+  ],
+  "projects": [
+    {
+      "id": "ok-store",
+      "title": "OK Store — Premium Tech & Hardware E-Commerce",
+      "desc": "Premium e-commerce foundation for high-end PC parts and custom rigs — design system, faceted catalog, product detail pages, and a pure compatibility engine powering the upcoming Custom PC Builder.",
+      "tags": ["Next.js 14", "TypeScript", "Tailwind", "npm workspaces", "Vitest"],
+      "status": "in development",
+      "liveUrl": null
+    },
+    {
+      "id": "oyster-co",
+      "title": "Oyster & Co. — Watch E-Commerce Platform",
+      "desc": "Full production platform for a luxury watchmaker — Next.js 15 storefront, Prisma catalog, admin panel for orders & bookings, email and exchange-rate integrations.",
+      "tags": ["Next.js 15", "React 19", "Prisma", "Three.js", "GSAP"],
+      "status": "production stack",
+      "liveUrl": null
+    },
+    {
+      "id": "crown-watch-boutique",
+      "title": "Crown & Co. — 3D Luxury Watch Boutique",
+      "desc": "Concept boutique where every watch is procedurally built in the browser with three.js — bilingual AR/EN with full RTL, four currencies, and a live configurator.",
+      "tags": ["Three.js", "GSAP", "i18n + RTL", "3D Configurator"],
+      "status": "concept demo",
+      "liveUrl": null
+    },
+    {
+      "id": "graven-drafting-works",
+      "title": "GRAVEN / Drafting Works",
+      "desc": "Cinematic long-scroll landing where scroll scrubs a blueprint video with spring physics — contact form with Zod + Turnstile, Plausible analytics, Playwright visual tests and full CI/CD.",
+      "tags": ["React 18", "TypeScript", "Vite", "Playwright", "CI/CD"],
+      "status": "agency build",
+      "liveUrl": null
+    },
+    {
+      "id": "diet-soda",
+      "title": "Diet Soda — Premium 3D Product Landing",
+      "desc": "Immersive landing with an interactive 3D can (model-viewer + AR), flavor-switching theme engine, GSAP scroll choreography — WCAG 2.1 AA and offline-capable PWA.",
+      "tags": ["Lit 3", "model-viewer", "GSAP", "PWA", "WCAG AA"],
+      "status": "interactive 3d",
+      "liveUrl": null
+    },
+    {
+      "id": "aurelia",
+      "title": "AURELIA — Haute Horlogerie in 3D",
+      "desc": "Single-file concept boutique with four legendary references rendered in real-time 3D — tightly hardened with a strict CSP, live configuration and four supported currencies.",
+      "tags": ["Three.js", "Strict CSP", "3D", "E-commerce"],
+      "status": "self-contained",
+      "liveUrl": null
+    },
+    {
+      "id": "solo-system",
+      "title": "Solo System — Habit & Quest Tracker",
+      "desc": "Solo-Leveling-inspired habit and task system — local player accounts with salted hashes, weekly analytics with a 365-day map, 22 themes, and packaged builds for Windows + signed Android APK.",
+      "tags": ["Vanilla JS", "PWA", "Offline-first", "Windows", "Android"],
+      "status": "shipped v7.0",
+      "liveUrl": null
+    },
+    {
+      "id": "modern-dashboard",
+      "title": "Modern Dashboard & E-Commerce App",
+      "desc": "High-performance interactive web application — an intuitive dashboard interface, seamless UI state management, and full responsiveness across every screen size.",
+      "tags": ["React", "Node.js", "REST API", "Tailwind", "Vercel"],
+      "status": "live",
+      "liveUrl": "https://azure-theta-87.vercel.app/"
+    },
+    {
+      "id": "carpentry-site",
+      "title": "Carpentry & Decor — Client Business Site",
+      "desc": "Complete commercial site for a local carpentry & decor business — portfolio showcase, customer service inquiries, and lead-to-booking conversion flow.",
+      "tags": ["JavaScript", "Express.js", "Full-Stack", "Responsive UI"],
+      "status": "live",
+      "liveUrl": "https://ok-web-blue.vercel.app"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Sarah Chen",
+      "role": "CTO, StartupX",
+      "quote": "Amier delivered our dashboard two weeks ahead of schedule. The code is clean, well-documented, and production-ready.",
+      "rating": 5
+    },
+    {
+      "name": "Marcus Rodriguez",
+      "role": "Founder, DevShop",
+      "quote": "Exceptional attention to detail and accessibility. Our conversion rate improved by 30% after the redesign.",
+      "rating": 5
+    },
+    {
+      "name": "Fatima Al-Sayed",
+      "role": "Product Manager, TechFlow",
+      "quote": "Secure, scalable, and beautifully designed. Amier is a full-stack engineer you can trust with your product.",
+      "rating": 5
+    }
+  ],
+  "blog": [
+    {
+      "title": "Building Secure REST APIs with Node.js and Express",
+      "excerpt": "Authentication, rate limiting, input validation, and best practices for production-grade APIs.",
+      "date": "2026-01",
+      "readTime": "8 min",
+      "tags": ["Node.js", "Security", "API"]
+    },
+    {
+      "title": "Web Performance Optimization: Core Web Vitals in 2026",
+      "excerpt": "How to measure and improve LCP, CLS, and INP for better SEO and user experience.",
+      "date": "2026-02",
+      "readTime": "6 min",
+      "tags": ["Performance", "SEO", "Web Vitals"]
+    },
+    {
+      "title": "Accessible Dark Mode with CSS Custom Properties",
+      "excerpt": "A system-preference-aware dark theme with manual override and localStorage persistence.",
+      "date": "2026-03",
+      "readTime": "5 min",
+      "tags": ["CSS", "Accessibility", "UI/UX"]
+    }
+  ]
+}
