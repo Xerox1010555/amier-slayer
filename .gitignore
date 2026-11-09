@@ -12,3 +12,7 @@ Desktop.ini
 # Local
 *.log
 node_modules/
+
+# local dev harness
+dev-responsive.html
+dev-responsive.js

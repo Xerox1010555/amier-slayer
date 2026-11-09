@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none'" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob:; connect-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'none'" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Amier — Full-Stack Web Developer</title>
   <meta name="description" content="Amier — Full-Stack Web Developer crafting high-performance, scalable, modern web applications. Pixel-perfect front-ends, secure back-ends, end-to-end delivery. Available for hire worldwide." />
@@ -690,7 +690,8 @@
   </footer>
 
   <script src="script.js" defer></script>
-<script src="three.min.js" defer></script>
-<script src="slayer3d.js" defer></script>
+  <script src="three.min.js" defer></script>
+  <script src="GLTFLoader.js" defer></script>
+  <script src="slayer3d.js" defer></script>
 </body>
 </html>

@@ -35,16 +35,29 @@ const SECURITY_HEADERS = {
   "Permissions-Policy": "geolocation=(), microphone=(), camera=(), interest-cohort=()",
   "X-Frame-Options": "DENY",
   "Content-Security-Policy":
-    "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'"
+    "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; img-src 'self' data: blob:; connect-src 'self' blob:; base-uri 'self'; form-action 'none'; frame-ancestors 'none'"
 };
 
+/* dev-only escape hatch: ?__devframe=1 lets the local responsive harness frame the page */
+let __noFrame = false;
+
+function headersFor(extra) {
+  const h = Object.assign({}, SECURITY_HEADERS, extra || {});
+  if (__noFrame) {
+    delete h["X-Frame-Options"];
+    h["Content-Security-Policy"] = h["Content-Security-Policy"].replace("; frame-ancestors 'none'", "");
+  }
+  return h;
+}
+
 function send(res, status, headers, body) {
-  res.writeHead(status, Object.assign({}, SECURITY_HEADERS, headers));
+  res.writeHead(status, headersFor(headers));
   res.end(body);
 }
 
 http
   .createServer((req, res) => {
+    __noFrame = /__devframe=1/.test(req.url || "");
     // Method allow-list
     if (req.method !== "GET" && req.method !== "HEAD") {
       send(res, 405, { Allow: "GET, HEAD", "Content-Type": "text/plain" }, "Method not allowed");
@@ -90,7 +103,7 @@ http
           ? "public, max-age=2592000"
           : "no-cache";
 
-      const headers = Object.assign({}, SECURITY_HEADERS, { "Content-Type": type, "Cache-Control": cache });
+      const headers = headersFor({ "Content-Type": type, "Cache-Control": cache });
 
       if (req.method === "HEAD") {
         res.writeHead(200, Object.assign({ "Content-Length": stat.size }, headers));
