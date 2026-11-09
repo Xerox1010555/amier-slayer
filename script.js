@@ -60,6 +60,12 @@
   var INTROS = ["slash", "ink", "stamp", "ember", "blink"];
   if (!prefersReduced) {
     document.documentElement.classList.add("intro-" + pickNoRepeat(INTROS, "intro"));
+    /* the curtain is scheduled, not permanent: release it after the first
+       paint so intro-blink's keyed assemble transitions actually play.
+       (rAF + timer belt-and-braces: rAF is throttled in background tabs) */
+    var releaseIntro = function () { document.documentElement.classList.add("intro-played"); };
+    requestAnimationFrame(function () { requestAnimationFrame(releaseIntro); });
+    setTimeout(releaseIntro, 150);
   }
 
   /* —— small flavor that also rerolls every refresh —— */
@@ -209,6 +215,21 @@
       if (head) head.classList.add("in");
     });
   }
+
+  /* safety net: whatever is above the fold gets revealed no matter what
+     (odd embedding roots, fonts shifting layout, observer edge cases) */
+  setTimeout(function () {
+    var vh = window.innerHeight || document.documentElement.clientHeight || 800;
+    animEls.forEach(function (el) {
+      if (el.classList.contains("in")) return;
+      var r = el.getBoundingClientRect();
+      if (r.top < vh * 0.96 && r.bottom > 0) {
+        el.classList.add("in");
+        var hr = el.closest && el.closest(".head-row");
+        if (hr) hr.classList.add("in");
+      }
+    });
+  }, 1600);
 
   /* ---------------------------------------------------------
      4. Active section nav highlighting

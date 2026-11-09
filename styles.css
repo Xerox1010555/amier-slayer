@@ -484,6 +484,36 @@ html.anim-ready .slash-sweep { animation: slashSweep 0.62s 1.06s var(--ease-out)
 }
 .fig-tag b { font-size: 13px; font-weight: 900; letter-spacing: 0.02em; color: var(--bone); }
 .fig-tag span { font-size: 8.5px; letter-spacing: 0.08em; color: rgba(244,242,234,0.55); white-space: nowrap; }
+
+/* speech bubble — the slayer greets you ("Hi!") */
+.fig-hi {
+  position: absolute;
+  z-index: 3;
+  top: clamp(8px, 5%, 42px);
+  right: clamp(10px, 8%, 46px);
+  padding: 10px 16px 8px;
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  color: #fff;
+  background: var(--crimson);
+  border: 1px solid rgba(244, 242, 234, 0.35);
+  border-radius: 12px 12px 12px 3px;
+  box-shadow: 0 14px 34px rgba(212, 52, 37, 0.42);
+  transform: translateY(10px) rotate(-7deg) scale(0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.45s var(--ease-out), opacity 0.28s var(--ease-out);
+  transition-delay: 0.55s;
+}
+.hero-stage.is-hiing .fig-hi {
+  transform: translateY(0) rotate(-7deg) scale(1);
+  opacity: 1;
+  transition-delay: 0.55s;
+}
+@media (max-width: 640px) {
+  .fig-hi { top: 2px; right: 6px; font-size: 13px; padding: 8px 13px 7px; }
+}
 @keyframes figIn {
   from { opacity: 0; transform: translateY(44px) rotate(-2deg); }
   to { opacity: 1; transform: none; }
@@ -1653,6 +1683,19 @@ html.anim-ready.intro-blink .anim-chars .char {
   transition-delay: calc(var(--d, 0ms) * 0.25 + 850ms);
 }
 html.anim-ready.intro-blink .anim-chars.in .char { opacity: 1; transform: none; }
+
+/* —— the curtain rises: intro-played releases the blink pre-state —— */
+/* (delays live on the pre-state above, so these still animate in) */
+html.anim-ready.intro-blink.intro-played .hero-annot,
+html.anim-ready.intro-blink.intro-played .hero-eyebrow,
+html.anim-ready.intro-blink.intro-played .hero-name {
+  opacity: calc(1 - var(--sy) * 0.0014);
+  transform: none;
+}
+html.anim-ready.intro-blink.intro-played .hero-stage {
+  opacity: calc(1 - var(--sy) * 0.0011);
+  transform: none;
+}
 @keyframes fxVeil {
   0% { opacity: 0; }
   6% { opacity: 1; }
@@ -1681,27 +1724,37 @@ html.anim-ready.intro-blink .anim-chars.in .char { opacity: 1; transform: none; 
 
 /* the split collapses a notch later, so tablets still get the full scene */
 @media (max-width: 900px) {
-  /* the split stacks: copy on top, player stage below */
+  /* the split stacks — and the slayer moves UP into the first screen:
+     hero-copy flattens into the grid so the stage can slot right
+     after the headline instead of below all the copy */
+  .hero-copy { display: contents; }
+  .hero-eyebrow { order: 1; }
+  .hero-name   { order: 2; }
+  .hero-role   { order: 3; }
+  .hero-stage  { order: 4; }
+  .hero-icons  { order: 5; }
+  .hero-cta    { order: 6; }
+  .hero-stats  { order: 7; }
   .hero-grid {
     grid-template-columns: 1fr;
     align-items: start;
-    gap: 10px;
-    padding-top: clamp(168px, 19vh, 200px);
-    padding-bottom: 8px;
+    gap: 12px;
+    padding-top: clamp(110px, 15vh, 170px);
+    padding-bottom: 10px;
+    min-height: 0;
   }
-  .hero-copy { padding-bottom: 10px; }
   .hero-stats { width: 100%; }
   .hero-stage {
     height: clamp(300px, 44vh, 430px);
     padding-bottom: 14px;
   }
-  .fig-wrap { width: min(100%, 400px); height: 100%; }
+  .fig-wrap { width: min(100%, 400px); height: 100%; margin-inline: auto; }
   .fig-tag { left: 4px; bottom: 34px; }
   .fig-floor { bottom: 26px; }
 }
 @media (max-width: 720px) {
   .hero-annot--tl { display: none; }
-  .hero-grid { padding-top: clamp(120px, 15vh, 150px); }
+  .hero-grid { padding-top: clamp(88px, 11.5vh, 130px); }
   .hero-role { max-width: 100%; }
   .hero-stats { gap: 30px; }
   .stat-num { font-size: 24px; }

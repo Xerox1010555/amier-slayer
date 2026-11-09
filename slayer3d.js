@@ -3,10 +3,12 @@
    Character: KayKit "Adventurers Character Pack · Knight"
    (© Kay Lousberg — CC0 · kaylousberg.itch.io) · vendored GLB.
    Loaded with three.js r149 + vendored classic GLTFLoader.js.
-   Plays its built-in idle animation, follows the cursor with a
-   gentle parallax, and sits on a crimson-ember floor. Zero
-   network calls beyond the same-origin .glb. Falls back to the
-   「刃 ⚔ 夢」 badge if WebGL is missing or the model fails.
+   Plays his built-in idle, greets you with a Hi! bubble and a random
+   flourish, tracks your cursor with his sword, and fights — click,
+   sweep the cursor over the stage, or wait for his auto-duel. Zero
+   network calls beyond the same-origin .glb (`blob:` texture fetches
+   stay same-page). Falls back to the 「刃 ⚔ 夢」 badge if WebGL is
+   missing or the model fails.
    ============================================================ */
 (function () {
   "use strict";
@@ -102,6 +104,10 @@
   }
 
   var loadedGltf = null, mixer = null, idleAction = null, activeAction = null;
+  var aimBone = null, aimWeight = 0, swayX = 0, swayY = 0;
+  var lastSwing = 0, hiTimer = 0, autoTimer = 0;
+  var _qAim = new THREE.Quaternion();
+  var _eAim = new THREE.Euler();
 
   function act(name) {
     if (!mixer) return null;
@@ -121,6 +127,46 @@
   var GREETINGS = ["Cheer", "1H_Melee_Attack_Slice_Diagonal", "2H_Melee_Attack_Slice", "Dodge_Backward"];
   var ATTACKS = ["1H_Melee_Attack_Slice_Diagonal", "1H_Melee_Attack_Chop", "1H_Melee_Attack_Stab", "2H_Melee_Attack_Slice"];
 
+  /* play a one-shot clip over whatever is on stage, then the
+     mixer "finished" handler responsibly blends back to idle */
+  function oneShot(name, fade) {
+    var a = act(name);
+    if (!a) return false;
+    if (activeAction && activeAction !== a) activeAction.fadeOut(fade);
+    a.setLoop(THREE.LoopOnce, 1);
+    a.clampWhenFinished = false;
+    a.reset().fadeIn(fade).play();
+    activeAction = a;
+    return true;
+  }
+
+  /* the slayer fights: click, cursor pass, or self-duel on a timer */
+  function swing(minGap) {
+    if (!mixer || reduced) return false;
+    var now = performance.now();
+    if (minGap && now - lastSwing < minGap) return false;
+    return shuffled(ATTACKS).some(function (n) {
+      if (oneShot(n, 0.12)) { lastSwing = now; return true; }
+      return false;
+    });
+  }
+
+  /* the speech bubble — he says hi whenever he greets you */
+  function sayHi() {
+    stage.classList.add("is-hiing");
+    clearTimeout(hiTimer);
+    hiTimer = setTimeout(function () { stage.classList.remove("is-hiing"); }, 2600);
+  }
+
+  /* nobody attacks the slayer — so he spars with the wind now and then */
+  function scheduleAuto() {
+    clearTimeout(autoTimer);
+    autoTimer = setTimeout(function () {
+      if (visible) swing(0);
+      scheduleAuto();
+    }, 9000 + Math.random() * 8000);
+  }
+
   if (typeof THREE.GLTFLoader === "function") {
     new THREE.GLTFLoader().load(GLB_URL, function (gltf) {
       loadedGltf = gltf;
@@ -138,6 +184,12 @@
       /* built-in idle animation + a random "greeting" flourish, then back to idle */
       var clip = pickIdleClipType(gltf);
       window.__slayerClips = (gltf.animations || []).map(function (c) { return c.name; });
+
+      /* the weapon bone — the additive "aim at your cursor" sway rides on it */
+      var byName = {};
+      model.traverse(function (o) { if (o.name && !byName[o.name]) byName[o.name] = o; });
+      aimBone = byName["1H_Sword"] || byName["handslot.r"] || byName["hand.r"] || byName["upperarm.r"] || null;
+
       if (clip && !reduced) {
         mixer = new THREE.AnimationMixer(model);
         idleAction = mixer.clipAction(clip);
@@ -147,13 +199,8 @@
         mixer.update(0.05);          /* settle into the idle pose */
 
         shuffled(GREETINGS).some(function (name) {
-          var g = act(name);
-          if (!g) return false;
-          g.setLoop(THREE.LoopOnce, 1);
-          g.clampWhenFinished = false;
-          g.reset().fadeIn(0.18).play();
-          activeAction = g;
-          return true;
+          if (oneShot(name, 0.18)) { sayHi(); scheduleAuto(); return true; }
+          return false;
         });
       }
 
@@ -192,32 +239,35 @@
     }, { threshold: 0.02 }).observe(canvas);
   }
 
+  /* additive sword-aim: the blade leans toward the cursor while idling.
+     Applied AFTER the mixer writes the pose, forceable for test renders. */
+  function applyAim(forceX, forceY) {
+    if (!aimBone || reduced) return;
+    aimWeight += (((activeAction === idleAction) ? 1 : 0) - aimWeight) * 0.06;
+    var tx = (forceX != null) ? forceX : px, ty = (forceY != null) ? forceY : py;
+    swayY += (tx * 0.55 - swayY) * 0.09;
+    swayX += (ty * 0.36 - swayX) * 0.09;
+    var w = aimWeight;
+    aimBone.quaternion.multiply(_qAim.setFromEuler(_eAim.set(-swayX * w, -swayY * w, swayY * 0.5 * w)));
+  }
+
   function frame(t) {
     var dt = clock.getDelta();
     var k = reduced ? 0 : 1;
     if (mixer) mixer.update(reduced ? 0 : dt);
+    applyAim();
 
     px += (tpx - px) * 0.06;
     py += (tpy - py) * 0.06;
-    fig.rotation.y = k * (flagFacing + 0.06 + px * 0.28);
+    fig.rotation.y = k * (flagFacing + 0.06 + px * 0.36);
     fig.rotation.x = k * (py * 0.05);
 
     renderer.render(scene, camera);
   }
 
-  /* click / tap the stage → the slayer swings the blade */
-  stage.addEventListener("pointerdown", function () {
-    if (!mixer || reduced) return;
-    shuffled(ATTACKS).some(function (name) {
-      var a = act(name);
-      if (!a) return false;
-      a.setLoop(THREE.LoopOnce, 1);
-      a.clampWhenFinished = false;
-      a.reset().fadeIn(0.12).play();
-      activeAction = a;
-      return true;
-    });
-  });
+  /* click / tap the stage → instant swing · cursor pass → duel (throttled) */
+  stage.addEventListener("pointerdown", function () { swing(0); });
+  stage.addEventListener("pointermove", function () { swing(2800); }, { passive: true });
 
   function loop() {
     if (visible) frame();
@@ -315,11 +365,16 @@
       camera.lookAt(0, 0.99, 0);
       camera.updateProjectionMatrix();
     },
-    /* play any clip by name (test/tuning helper) */
-    step: function (dt) {
-      if (mixer) mixer.update(dt || 0.033);
+    /* step the mixer manually (dt) — force cursor aim (aX, aY) for tests; dt=0 freezes the pose */
+    step: function (dt, aX, aY) {
+      if (mixer) mixer.update((dt != null) ? dt : 0.033);
+      applyAim(aX, aY);
       renderer.render(scene, camera);
     },
+    swing: function () { return swing(0); },
+    sayHi: function () { sayHi(); },
+    aimBone: function () { return aimBone ? aimBone.name : null; },
+    /* play any clip by name (test/tuning helper) */
     play: function (name, once) {
       var a = act(name);
       if (!a) return false;
