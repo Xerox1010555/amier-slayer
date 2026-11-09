@@ -155,64 +155,90 @@ b { font-weight: 800; }
 .fig { color: var(--muted); font-size: 11px; padding-bottom: 10px; }
 
 /* ============================================================
-   HERO — Demon Slayer dark scene
-   ============================================================ */
-/* ============================================================
-   HERO — base layout (shared by light/dark themes)
+   HERO — Demon Slayer dark scene · professional split layout:
+   copy column left, full-height slayer stage right
    ============================================================ */
 .hero {
   position: relative;
   min-height: calc(100svh - 60px);
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  text-align: center;
-  padding: 110px clamp(20px, 4vw, 44px) 60px;
+  padding: 0 clamp(20px, 4vw, 44px);
   overflow: hidden;
 }
 
+.hero-grid {
+  position: relative;
+  z-index: 3;
+  max-width: var(--shell);
+  margin-inline: auto;
+  min-height: calc(100svh - 60px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.92fr);
+  align-items: end;
+  padding-top: clamp(150px, 17vh, 178px);
+}
+
+/* — copy column — */
+.hero-copy {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding-bottom: clamp(34px, 6vh, 64px);
+  min-width: 0;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: clamp(10px, 1.2vw, 12.5px);
+  letter-spacing: 0.22em;
+  text-transform: lowercase;
+  color: rgba(244, 242, 234, 0.62);
+  padding: 9px 16px;
+  border: 1px solid rgba(244, 242, 234, 0.14);
+  border-radius: 100px;
+  background: rgba(11, 11, 13, 0.5);
+  margin-bottom: clamp(20px, 3.4vh, 34px);
+}
+.hero-eyebrow .eyebrow-rune { color: var(--crimson); font-weight: 700; letter-spacing: 0; }
+.hero-eyebrow .eyebrow-dot { color: var(--crimson); }
+
 .hero-name {
   position: relative;
-  font-size: clamp(76px, 16vw, 236px);
+  font-size: clamp(68px, 9.2vw, 156px);
   font-weight: 900;
   letter-spacing: -0.055em;
   line-height: 0.9;
-  display: flex; flex-direction: column; align-items: center;
+  display: flex; flex-direction: column; align-items: flex-start;
   z-index: 2;
   isolation: isolate;
 }
-.name-ink { position: relative; z-index: 2; animation: rise 1s var(--ease-out) both; }
 .name-echo {
   position: relative; z-index: 1;
   transform: translateY(-0.14em);
   color: var(--faint);
   user-select: none;
   pointer-events: none;
-  animation: rise 1.15s 0.08s var(--ease-out) both;
 }
-@keyframes rise {
-  from { opacity: 0; transform: translateY(26px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.name-echo { animation-name: riseEcho; }
-@keyframes riseEcho {
-  from { opacity: 0; transform: translateY(calc(-0.14em + 26px)); }
-  to { opacity: 1; transform: translateY(-0.14em); }
-}
+.name-ink { position: relative; z-index: 2; }
 
 .hero-role {
   z-index: 2;
-  margin-top: clamp(18px, 3vw, 34px);
+  margin-top: clamp(18px, 3vh, 30px);
   color: var(--soft);
-  font-size: clamp(10px, 1.6vw, 13.5px);
+  font-size: clamp(10.5px, 1.4vw, 13px);
   letter-spacing: 0.06em;
   text-transform: lowercase;
-  max-width: 86vw;
+  max-width: 34em;
 }
 
 .hero-icons {
   z-index: 2;
   display: flex; gap: 10px;
-  margin-top: clamp(18px, 2.6vw, 28px);
+  margin-top: clamp(18px, 2.6vh, 26px);
 }
 .mini-chip {
   display: grid; place-items: center;
@@ -232,22 +258,22 @@ b { font-weight: 800; }
 .hero-cta {
   z-index: 2;
   display: flex; gap: 12px;
-  margin-top: clamp(22px, 3vw, 34px);
-  flex-wrap: wrap; justify-content: center;
+  margin-top: clamp(20px, 3vh, 30px);
+  flex-wrap: wrap; justify-content: flex-start;
 }
 
 .hero-stats {
   z-index: 2;
-  display: flex; gap: clamp(28px, 6vw, 72px);
-  margin-top: clamp(40px, 6vw, 72px);
-  padding-top: clamp(20px, 3vw, 28px);
+  display: flex; gap: clamp(26px, 4.5vw, 56px);
+  margin-top: clamp(30px, 5vh, 52px);
+  padding-top: clamp(16px, 2.6vh, 24px);
   border-top: 1px solid var(--line);
-  width: min(680px, 92%);
-  justify-content: center;
+  width: min(560px, 100%);
+  justify-content: flex-start;
 }
-.stat { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.stat { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
 .stat-num {
-  font-size: clamp(26px, 4vw, 44px);
+  font-size: clamp(26px, 3.6vw, 42px);
   font-weight: 900; letter-spacing: -0.03em; line-height: 1;
   font-variant-numeric: tabular-nums;
 }
@@ -267,7 +293,6 @@ html.anim-ready .hero--demon .hero-annot--tl span:first-child { color: var(--cri
   color: var(--bone);
   text-shadow: 0 0 52px rgba(212, 52, 37, 0.16);
 }
-.name-ink { position: relative; z-index: 2; animation: rise 1s var(--ease-out) both; }
 .hero--demon .name-ink {
   color: var(--bone);
   text-shadow: 0 3px 24px rgba(11, 11, 13, 0.6), 0 0 46px rgba(212, 52, 37, 0.28);
@@ -304,9 +329,9 @@ html.anim-ready .hero--demon .hero-annot--tl span:first-child { color: var(--cri
   color: var(--muted); font-size: 10.5px;
   text-align: left;
 }
-.hero-annot--tl { top: 92px; left: clamp(22px, 4vw, 46px); }
+.hero-annot--tl { top: 92px; left: clamp(22px, 4vw, 46px); max-width: 200px; }
 .hero-annot--tr { top: 92px; right: clamp(22px, 4vw, 46px); align-items: flex-end; }
-.hero-annot--br { bottom: 28px; right: clamp(22px, 4vw, 46px); flex-direction: row; }
+.hero-annot--tr .avail { display: inline-flex; align-items: center; gap: 7px; }
 .hero-annot--tl span:first-child { color: var(--green-dk); }
 
 .pulse-dot {
@@ -391,110 +416,83 @@ html.anim-ready .slash-sweep { animation: slashSweep 0.62s 1.06s var(--ease-out)
   pointer-events: none;
 }
 
-/* —— the waving slayer figure —— */
-.hero-figure {
-  position: absolute;
-  right: clamp(12px, 6vw, 116px);
-  bottom: clamp(56px, 9vh, 96px);
-  width: clamp(190px, 21vw, 292px);
+/* —— the slayer stage: real-time 3D character (three.js) —— */
+.hero-stage {
+  position: relative;
   z-index: 3;
+  align-self: stretch;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   pointer-events: none;
+  min-width: 0;
+  padding-bottom: clamp(50px, 8vh, 88px);
 }
-.hero-figure .fig-float {
-  position: relative;
-  animation: figIn 1s 1.3s var(--ease-out) both, figBob 5.5s 2.4s ease-in-out infinite;
-}
-/* —— Tanjiro portrait card —— */
-.slayer-card {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 340 / 426;
-  border-radius: 48% 48% 16px 16px / 32% 32% 16px 16px; /* arch mask */
-  overflow: hidden;
-  background: var(--abyss-2);
-  box-shadow:
-    0 24px 52px rgba(0, 0, 0, 0.55),
-    0 0 0 1px rgba(244, 242, 234, 0.11),
-    0 0 46px rgba(212, 52, 37, 0.3);
-  isolation: isolate;
-}
-.slayer-card img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  object-position: 50% 18%; /* keep the face centered in the arch */
-  display: block;
-  filter: saturate(1.06) contrast(1.04);
-}
-/* soft crimson vignette inside the arch */
-.slayer-card::before {
-  content: "";
-  position: absolute; inset: 0;
-  z-index: 1;
+.fig-halo {
+  position: absolute;
+  inset: -14% -20% -8%;
+  z-index: 0;
   background:
-    radial-gradient(88% 60% at 50% 30%, transparent 55%, rgba(11, 11, 13, 0.45) 100%),
-    linear-gradient(180deg, transparent 62%, rgba(11, 11, 13, 0.55) 100%);
-  pointer-events: none;
+    radial-gradient(58% 44% at 52% 40%, rgba(212, 52, 37, 0.15), transparent 66%),
+    radial-gradient(72% 58% at 50% 108%, rgba(212, 52, 37, 0.10), transparent 60%);
+  filter: blur(2px);
 }
-/* polished ring + glow */
-.slayer-card::after {
-  content: "";
+.fig-wrap {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 500px);
+  height: min(73vh, 660px);
+  animation: figIn 1.05s 0.35s var(--ease-out) both;
+}
+.fig-canvas { display: block; width: 100%; height: 100%; }
+.fig-fallback {
+  display: none;
   position: absolute; inset: 0;
+  align-items: center; justify-content: center;
+  color: var(--crimson);
+  font-size: clamp(26px, 4vw, 40px);
+  letter-spacing: 0.18em;
+  text-align: center;
+}
+.hero-stage.no-webgl .fig-fallback { display: flex; }
+.hero-stage.no-webgl .fig-canvas { display: none; }
+.fig-floor {
+  position: absolute;
+  z-index: 0;
+  left: 50%; bottom: clamp(44px, 7.5vh, 82px);
+  width: clamp(190px, 21vw, 300px); height: 13px;
+  translate: -50% 0;
+  border-radius: 50%;
+  background: radial-gradient(50% 100% at 50% 50%, rgba(0,0,0,0.62), rgba(212,52,37,0.10) 62%, transparent);
+  filter: blur(3px);
+}
+/* placard beside the figure (never overlaps the name — lives in the stage) */
+.fig-tag {
+  position: absolute;
   z-index: 2;
-  border-radius: inherit;
-  border: 1px solid rgba(244, 242, 234, 0.16);
-  background: none;
-  pointer-events: none;
-}
-/* tilted crimson slash marks behind the card */
-.slash-mark {
-  position: absolute;
-  z-index: -1;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--crimson) 45%, rgba(244, 242, 234, 0.75) 70%, transparent);
-  filter: drop-shadow(0 0 6px rgba(212, 52, 37, 0.6));
-  pointer-events: none;
-  opacity: 0;
-  transform: scaleX(0);
-  transform-origin: left;
-}
-.slash-mark--a { width: 74%; top: 9%; right: -16%; rotate: -18deg; animation: markIn 0.55s 1.75s var(--ease-out) both; }
-.slash-mark--b { width: 56%; top: 25%; right: -22%; rotate: -18deg; animation: markIn 0.55s 1.9s var(--ease-out) both; }
-.slash-mark--c { width: 88%; top: 79%; left: -30%; rotate: -14deg; animation: markIn 0.55s 2.05s var(--ease-out) both; }
-@keyframes markIn {
-  0% { opacity: 0; transform: scaleX(0); }
-  45% { opacity: 1; }
-  100% { opacity: 0.9; transform: scaleX(1); }
-}
-.figure-bubble {
-  position: absolute;
-  left: -12%; top: -7%;
-  min-width: 128px;
-  padding: 12px 15px 11px;
-  background: var(--bone);
-  color: var(--abyss);
-  border-radius: 14px 14px 14px 3px;
-  box-shadow: 0 14px 30px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(17,17,17,0.08);
+  left: clamp(0px, 1vw, 16px);
+  bottom: clamp(56px, 9vh, 96px);
   display: flex; flex-direction: column; gap: 2px;
-  animation: bubbleIn 0.6s 2s var(--ease-out) both, bubbleBob 5.5s 2.7s ease-in-out infinite;
+  padding: 10px 14px 9px;
+  background: rgba(244, 242, 234, 0.06);
+  border: 1px solid rgba(244, 242, 234, 0.13);
+  border-left: 2px solid var(--crimson);
+  border-radius: 10px 12px 12px 10px;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  animation: tagIn 0.6s 1.45s var(--ease-out) both, tagBob 5.5s 2.2s ease-in-out infinite;
 }
-.figure-bubble::after {
-  content: "";
-  position: absolute;
-  left: 14px; bottom: -8px;
-  width: 14px; height: 14px;
-  background: var(--bone);
-  clip-path: polygon(0 0, 100% 0, 20% 100%);
+.fig-tag b { font-size: 13px; font-weight: 900; letter-spacing: 0.02em; color: var(--bone); }
+.fig-tag span { font-size: 8.5px; letter-spacing: 0.08em; color: rgba(244,242,234,0.55); white-space: nowrap; }
+@keyframes figIn {
+  from { opacity: 0; transform: translateY(44px) rotate(-2deg); }
+  to { opacity: 1; transform: none; }
 }
-.figure-bubble strong { font-size: 20px; font-weight: 900; letter-spacing: -0.02em; line-height: 1; }
-.figure-bubble .mono { font-size: 8.5px; letter-spacing: 0.08em; color: var(--soft); white-space: nowrap; }
-@keyframes figIn { from { opacity: 0; transform: translateY(34px) rotate(-7deg); } to { opacity: 1; transform: none; } }
-@keyframes figBob { 0%, 100% { translate: 0 0; } 50% { translate: 0 -9px; } }
-@keyframes bubbleIn {
-  0% { opacity: 0; transform: scale(0.3) rotate(-8deg); }
-  70% { transform: scale(1.08) rotate(2deg); }
-  100% { opacity: 1; transform: scale(1) rotate(0deg); }
+@keyframes tagIn {
+  from { opacity: 0; transform: translateY(10px) scale(0.92); }
+  to { opacity: 1; transform: none; }
 }
-@keyframes bubbleBob { 0%, 100% { translate: 0 0; } 50% { translate: 0 -6px; } }
+@keyframes tagBob { 0%, 100% { translate: 0 0; } 50% { translate: 0 -6px; } }
 
 /* ============================================================
    MARQUEE — dark ticker between hero and about
@@ -1287,7 +1285,7 @@ html.anim-ready .hero [data-exit] {
 }
 html.anim-ready .hero-annot--tl { --fly: -0.10; }
 html.anim-ready .hero-annot--tr { --fly: -0.14; }
-html.anim-ready .hero-annot--br { --fly: -0.22; }
+html.anim-ready .hero-eyebrow   { --fly: -0.07; }
 html.anim-ready .hero-name      { --fly: -0.30; }
 html.anim-ready .name-echo      { --fly: -0.46; }
 html.anim-ready .hero-role      { --fly: -0.40; }
@@ -1295,7 +1293,8 @@ html.anim-ready .hero-icons     { --fly: -0.50; }
 html.anim-ready .hero-cta       { --fly: -0.58; }
 html.anim-ready .hero-stats     { --fly: -0.66; }
 /* demon scene layers exit at scene-depth too */
-html.anim-ready .hero-figure    { --fly: -0.38; opacity: calc(1 - var(--sy) * 0.0011); }
+html.anim-ready .hero-stage     { --fly: -0.38; opacity: calc(1 - var(--sy) * 0.0011); }
+html.anim-ready .fig-tag        { --fly: -0.34; }
 html.anim-ready .kanji-ghost    { --fly: -0.18; }
 html.anim-ready .side-ja        { --fly: -0.13; }
 html.anim-ready .hero-abyss .ember { opacity: calc(0.7 - var(--sy) * 0.0016); }
@@ -1461,6 +1460,211 @@ html.anim-ready .head-row.in .head-swipe i:nth-child(3) { animation: swipe 1.0s 
 }
 
 /* ============================================================
+   WELCOME INTRO — a different welcome scene every refresh.
+   script.js picks one: slash · ink · stamp · ember · blink
+   (never the same twice in a row). All choreography is
+   variant-scoped below; without JS the hero stays static.
+   ============================================================ */
+.intro-fx {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* —— 1 · SLASH: the screen is cut open —— */
+html.anim-ready.intro-slash .intro-fx-a {
+  opacity: 1;
+  background:
+    linear-gradient(180deg, transparent 45%, rgba(244, 242, 234, 0.92) 49.6%, var(--crimson) 50%, transparent 55%);
+  transform: translateY(-4%) rotate(-7deg);
+  animation: fxSlash 0.5s 0.05s var(--ease-out) both;
+}
+html.anim-ready.intro-slash .intro-fx-a::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(62% 42% at 50% 48%, rgba(255, 255, 255, 0.5), transparent 72%);
+  animation: fxFlash 0.4s 0.2s var(--ease-out) both;
+}
+html.anim-ready.intro-slash .slash-sweep { animation: slashSweep 0.62s 0.4s var(--ease-out) both; }
+html.anim-ready.intro-slash .anim-chars .char {
+  opacity: 0;
+  transform: translateX(calc(var(--sd, 1) * 72px)) skewX(-10deg) scaleY(1.2);
+  filter: blur(3px);
+  transition: opacity 0.26s var(--ease-out), transform 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.15), filter 0.4s var(--ease-out);
+  transition-delay: calc(var(--d, 0ms) + 150ms);
+}
+html.anim-ready.intro-slash .anim-chars.in .char { opacity: 1; transform: none; filter: blur(0); }
+
+/* —— 2 · INK: the name is brush-written —— */
+html.anim-ready.intro-ink .anim-chars .char {
+  opacity: 0;
+  transform: scale(1.6) rotate(6deg);
+  filter: blur(10px);
+  transition: opacity 0.3s var(--ease-out), transform 0.55s cubic-bezier(0.2, 0.9, 0.3, 1.08), filter 0.5s var(--ease-out);
+  transition-delay: var(--d, 0ms);
+}
+html.anim-ready.intro-ink .anim-chars.in .char { opacity: 1; transform: none; filter: blur(0); }
+html.anim-ready.intro-ink .hero-name::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: -4%; right: 32%; bottom: -2%;
+  height: clamp(6px, 0.8vw, 10px);
+  border-radius: 8px;
+  background: linear-gradient(90deg, transparent, var(--crimson) 26%, rgba(212, 52, 37, 0.9) 78%, transparent);
+  filter: drop-shadow(0 0 12px rgba(212, 52, 37, 0.55));
+  transform-origin: left center;
+  transform: scaleX(0);
+  animation: fxSwash 0.8s 0.5s var(--ease-out) both;
+}
+html.anim-ready.intro-ink .kanji-ghost { animation: kanjiDrift 1.7s 0.25s var(--ease-out) both; }
+html.anim-ready.intro-ink .fig-wrap { animation: figIn 1.05s 0.6s var(--ease-out) both; }
+@keyframes fxSwash {
+  0% { opacity: 0; transform: scaleX(0); }
+  22% { opacity: 1; }
+  78% { opacity: 0.92; transform: scaleX(1); }
+  100% { opacity: 0; transform: scaleX(1) translateX(12px); }
+}
+@keyframes kanjiDrift {
+  from { opacity: 0; transform: translateY(26px) scale(1.05); filter: blur(10px); }
+  to { opacity: 1; transform: none; filter: blur(0); }
+}
+
+/* —— 3 · STAMP: the crimson hanko slams down —— */
+html.anim-ready.intro-stamp .intro-fx-a::before {
+  content: "刃";
+  position: absolute;
+  left: 50%; top: 44%;
+  translate: -50% -50%;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(110px, 15vw, 210px);
+  line-height: 1.25;
+  color: var(--crimson);
+  border: clamp(6px, 1vw, 12px) solid var(--crimson);
+  border-radius: 14px;
+  padding: 0.06em 0.18em;
+  rotate: -9deg;
+  box-shadow: 0 0 60px rgba(212, 52, 37, 0.4), inset 0 0 44px rgba(212, 52, 37, 0.22);
+  animation: fxStamp 0.55s 0.12s cubic-bezier(0.16, 1, 0.3, 1) both, fxStampOut 0.5s 1.25s var(--ease-in) both;
+}
+html.anim-ready.intro-stamp .hero-grid { animation: fxShake 0.4s 0.56s var(--ease-out); }
+html.anim-ready.intro-stamp .anim-chars .char {
+  opacity: 0;
+  transform: scale(2.1);
+  transition: opacity 0.18s var(--ease-out), transform 0.42s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition-delay: calc(var(--d, 0ms) + 1500ms);
+}
+html.anim-ready.intro-stamp .anim-chars.in .char { opacity: 1; transform: scale(1); }
+html.anim-ready.intro-stamp .fig-wrap { animation: figIn 1.05s 1s var(--ease-out) both; }
+@keyframes fxStamp {
+  0% { opacity: 0; transform: scale(2.6) rotate(7deg); }
+  60% { opacity: 1; transform: scale(0.94) rotate(-10deg); }
+  78% { transform: scale(1.04) rotate(-8deg); }
+  100% { opacity: 1; transform: scale(1) rotate(-9deg); }
+}
+@keyframes fxStampOut {
+  to { opacity: 0; transform: scale(0.4) rotate(-22deg); }
+}
+@keyframes fxShake {
+  0%, 100% { transform: none; }
+  20% { transform: translate(0, -7px); }
+  40% { transform: translate(-5px, 2px); }
+  60% { transform: translate(4px, -2px); }
+  80% { transform: translate(-2px, 1px); }
+}
+
+/* —— 4 · EMBER: the forge ignites —— */
+html.anim-ready.intro-ember .anim-chars .char {
+  opacity: 0;
+  transform: translateY(0.5em) rotate(3deg);
+  text-shadow: 0 0 26px rgba(212, 52, 37, 0.9);
+  transition: opacity 0.38s var(--ease-out), transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), text-shadow 0.8s var(--ease-out);
+  transition-delay: var(--d, 0ms);
+}
+html.anim-ready.intro-ember .anim-chars.in .char {
+  opacity: 1;
+  transform: none;
+  text-shadow: 0 0 18px rgba(212, 52, 37, 0.28);
+}
+html.anim-ready.intro-ember .intro-fx-b { opacity: 1; }
+html.anim-ready.intro-ember .intro-fx-b::before {
+  content: "";
+  position: absolute;
+  left: 22%; bottom: 10%;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #ff6a4d, var(--crimson) 70%);
+  box-shadow:
+    3vw -16vh 0 #d43425, -6vw -32vh 0 #ff6a4d, 13vw -38vh 0 #d43425,
+    -11vw -20vh 0 #ff6a4d, 21vw -28vh 0 #d43425, -19vw -42vh 0 #ff6a4d,
+    9vw -48vh 0 #d43425, -3vw -52vh 0 #ff6a4d, 16vw -10vh 0 #ff6a4d;
+  animation: emberBurst 1.5s 0.1s var(--ease-out) both;
+}
+html.anim-ready.intro-ember .fig-wrap { animation: figEmerge 1.3s 0.25s var(--ease-out) both; }
+@keyframes emberBurst {
+  0% { opacity: 0; transform: translate(0, 32vh) scale(0.5); }
+  16% { opacity: 1; }
+  100% { opacity: 0; transform: translate(2vw, -52vh) scale(1.15); }
+}
+@keyframes figEmerge {
+  from { opacity: 0; filter: brightness(0.05) blur(6px); transform: translateY(26px); }
+  55% { opacity: 1; }
+  to { opacity: 1; filter: none; transform: none; }
+}
+
+/* —— 5 · BLINK: blackout, then everything assembles downward —— */
+html.anim-ready.intro-blink .intro-fx-a {
+  opacity: 1;
+  background: var(--abyss);
+  animation: fxVeil 0.95s 0.05s var(--ease-out) both;
+}
+html.anim-ready.intro-blink .intro-fx-a::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(244, 242, 234, 0.9), transparent);
+  animation: fxVeilLine 0.5s 0.2s var(--ease-out) both;
+}
+html.anim-ready.intro-blink .hero-annot,
+html.anim-ready.intro-blink .hero-eyebrow,
+html.anim-ready.intro-blink .hero-name {
+  transform: translateY(-32px);
+  opacity: 0;
+  transition: opacity 0.55s var(--ease-out), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: 0.78s;
+}
+html.anim-ready.intro-blink .hero-annot--tr { transition-delay: 0.9s; }
+html.anim-ready.intro-blink .hero-stage {
+  transform: translateY(-30px);
+  opacity: 0;
+  transition: opacity 0.6s var(--ease-out), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: 0.95s;
+}
+html.anim-ready.intro-blink .fig-wrap { animation: none; }
+html.anim-ready.intro-blink .anim-chars .char {
+  opacity: 0;
+  transform: translateY(0.4em);
+  transition: opacity 0.3s var(--ease-out), transform 0.45s var(--ease-out);
+  transition-delay: calc(var(--d, 0ms) * 0.25 + 850ms);
+}
+html.anim-ready.intro-blink .anim-chars.in .char { opacity: 1; transform: none; }
+@keyframes fxVeil {
+  0% { opacity: 0; }
+  6% { opacity: 1; }
+  62% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes fxVeilLine {
+  0% { transform: scaleX(0); opacity: 0; }
+  30% { opacity: 1; }
+  100% { transform: scaleX(1); opacity: 0; }
+}
+
+/* ============================================================
    Responsive
    ============================================================ */
 @media (max-width: 1020px) {
@@ -1472,33 +1676,39 @@ html.anim-ready .head-row.in .head-swipe i:nth-child(3) { animation: swipe 1.0s 
   .ledger-row { grid-template-columns: 56px 1fr; }
   .ledger-row .row-tag { grid-column: 2; justify-self: start; }
   .top-meta { display: none; }
-  /* hero figure tucks behind content on tablets */
-  .hero-figure {
-    right: 4px;
-    bottom: auto;
-    top: clamp(200px, 30vh, 260px);
-    width: clamp(140px, 20vw, 200px);
-    opacity: 0.85;
+  /* the split stacks: copy on top, player stage below */
+  .hero-grid {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 10px;
+    padding-top: clamp(168px, 19vh, 200px);
+    padding-bottom: 8px;
   }
-  .figure-bubble { left: auto; right: 96%; top: -6%; bottom: auto; }
+  .hero-copy { padding-bottom: 10px; }
+  .hero-stats { width: 100%; }
+  .hero-stage {
+    height: clamp(300px, 44vh, 430px);
+    padding-bottom: 14px;
+  }
+  .fig-wrap { width: min(100%, 400px); height: 100%; }
+  .fig-tag { left: 4px; bottom: 34px; }
+  .fig-floor { bottom: 26px; }
 }
 @media (max-width: 720px) {
   .hero-annot--tl { display: none; }
-  .hero-role { max-width: 92%; }
+  .hero-grid { padding-top: clamp(120px, 15vh, 150px); }
+  .hero-role { max-width: 100%; }
   .hero-stats { gap: 30px; }
   .stat-num { font-size: 24px; }
-  /* the portrait becomes a compact badge above the fold */
-  .hero-figure {
-    width: 118px;
-    top: clamp(108px, 13vh, 150px);
-    right: 10px;
-    opacity: 0.92;
-  }
-  .figure-bubble { padding: 8px 10px 7px; min-width: 0; right: 90%; top: -3%; bottom: auto; }
-  .figure-bubble .mono { display: none; }
-  .figure-bubble strong { font-size: 15px; }
+  .hero-stage { height: clamp(260px, 40vh, 380px); }
+  .fig-wrap { width: min(100%, 330px); }
+  .fig-tag { bottom: 24px; padding: 8px 11px 7px; }
+  .fig-tag b { font-size: 11.5px; }
+  .fig-tag span { font-size: 7.5px; }
+  .fig-floor { width: 60%; bottom: 18px; }
   .kanji-ghost { font-size: clamp(120px, 34vw, 200px); }
   .side-ja { display: none; }
+  .hero-name { font-size: clamp(62px, 17vw, 110px); }
 }
 
 /* ============================================================
@@ -1512,17 +1722,15 @@ html.anim-ready .head-row.in .head-swipe i:nth-child(3) { animation: swipe 1.0s 
     transition-duration: 0.01ms !important;
   }
   .reveal { opacity: 1; transform: none; }
-  /* static figure — no bob, no bubble pop, marks simply shown */
-  .hero-figure .fig-float,
-  .figure-bubble,
-  .slash-mark { animation: none !important; opacity: 1; transform: none; }
-  .slash-mark { opacity: 0.85; }
+  /* static stage — no bob, no tag pop */
+  .fig-wrap, .fig-tag, .fig-floor { animation: none !important; opacity: 1; transform: none; }
+  .intro-fx, .intro-fx::before, .intro-fx::after { display: none !important; }
   /* freeze the hero exit scene so nothing drifts */
   html.anim-ready .hero [data-exit],
   html.anim-ready .hero-name .name-echo { translate: none !important; opacity: 1 !important; filter: none !important; }
 }
 
 @media print {
-  .hero-abyss, .marquee, .topbar, .skip, .btn, .avail-badge, .hero-figure { display: none !important; }
+  .hero-abyss, .marquee, .topbar, .skip, .btn, .avail-badge, .hero-stage, .intro-fx { display: none !important; }
   body { background: #fff; }
 }

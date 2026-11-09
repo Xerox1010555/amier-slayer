@@ -79,7 +79,7 @@
 
     <!-- ============ HERO ============ -->
     <section class="hero hero--demon" id="hero" aria-label="Intro">
-      <!-- ambient crimson ash + one-time blade sweep -->
+      <!-- ambient crimson ash + blade sweep -->
       <div class="hero-abyss" aria-hidden="true">
         <i class="ember"></i><i class="ember"></i><i class="ember"></i>
         <i class="ember"></i><i class="ember"></i><i class="ember"></i>
@@ -88,83 +88,91 @@
       <span class="kanji-ghost" aria-hidden="true">刃</span>
       <span class="side-ja mono" aria-hidden="true">アミエ · full-stack bladesmith</span>
 
+      <!-- per-refresh welcome FX overlays (styled by the picked intro variant) -->
+      <i class="intro-fx intro-fx-a" aria-hidden="true"></i>
+      <i class="intro-fx intro-fx-b" aria-hidden="true"></i>
+
       <div class="hero-annot hero-annot--tl mono" data-exit aria-hidden="true">
-        <span>// amier — portfolio</span>
+        <span>// amier — portfolio v3</span>
         <span>// full-stack web developer</span>
         <span>// forged, never copied</span>
       </div>
       <div class="hero-annot hero-annot--tr mono" data-exit aria-hidden="true">
         <span>remote · worldwide</span>
-        <span>open to work</span>
-        <span class="pulse-dot" title="Available"></span>
-      </div>
-      <div class="hero-annot hero-annot--br mono" data-exit aria-hidden="true">
+        <span class="tr avail">open to work <i class="pulse-dot"></i></span>
         <span>last build — 2026.11</span>
       </div>
 
-      <!-- the waving slayer -->
-      <div class="hero-figure" data-exit aria-hidden="true">
-        <div class="fig-float">
-          <div class="slayer-card">
-            <img src="tanjiro.png" alt="Amier — the demon slayer greets you" width="340" height="426" decoding="async" loading="eager" />
-            <i class="slash-mark slash-mark--a" aria-hidden="true"></i>
-            <i class="slash-mark slash-mark--b" aria-hidden="true"></i>
-            <i class="slash-mark slash-mark--c" aria-hidden="true"></i>
+      <div class="hero-grid">
+        <!-- ——— copy column ——— -->
+        <div class="hero-copy">
+          <p class="hero-eyebrow mono" data-exit>
+            <span class="eyebrow-rune">///</span> the bladesmith forge is open<span class="eyebrow-dot">.</span>
+          </p>
+
+          <h1 class="hero-name" data-exit>
+            <span class="name-ink" data-anim="chars">Amier</span>
+            <span class="name-echo" aria-hidden="true">Amier</span>
+          </h1>
+
+          <p class="hero-role mono" data-anim="wbrick" data-exit>
+            full-stack web developer&nbsp;·&nbsp;pixel-perfect front-ends&nbsp;·&nbsp;secure back-ends&nbsp;·&nbsp;e2e delivery
+          </p>
+
+          <div class="hero-icons" data-anim="group" data-exit>
+            <a class="mini-chip" href="https://github.com/Xerox1010555" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-1.94c-3.2.7-3.87-1.54-3.87-1.54-.53-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.72-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.8 1.18 1.83 1.18 3.09 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.05.78 2.13v3.16c0 .31.2.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+            </a>
+            <a class="mini-chip" href="https://t.me/Amier1t5" target="_blank" rel="noopener noreferrer" aria-label="Telegram" title="Telegram">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M21.9 3.3 1.9 11.2c-1.2.5-1.1 1.6-.2 1.9l5 1.6 1.9 5.9c.3.9 1 1 1.7.4l2.7-2.2 5.1 3.8c.9.5 1.5.2 1.7-.8l3-16c.2-1-.5-1.9-1.9-1.5zM8.5 13.7l8.9-5.6c.4-.3.8-.1.5.2l-7.3 6.6-.3 3.1-1.8-4.3z"/></svg>
+            </a>
+            <a class="mini-chip" href="https://wa.me/201008655235?text=Hello%20Amier%2C%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.6 14.2c-.2.7-1.2 1.3-2 1.3-.5 0-1.2 0-3.2-.9-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1-1.4-1-2.7s.7-1.9 1-2.2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6c-.1.2-.3.4-.1.7.2.3.8 1.4 1.8 2.2 1.2 1.1 2.2 1.4 2.5 1.6.3.1.5.1.6-.1l.9-1c.2-.2.4-.2.6-.1l2 1c.3.1.5.2.5.4.1.3.1.8-.1 1.3z"/></svg>
+            </a>
+            <a class="mini-chip" id="mailChip" href="mailto:abddo4443@gmail.com" aria-label="Email" title="Email">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+            </a>
           </div>
-          <div class="figure-bubble">
-            <strong>Hi!</strong>
-            <span class="mono">amier here — let's forge yours</span>
+
+          <div class="hero-cta reveal" data-anim="group" data-exit>
+            <a class="btn btn-ink" href="assets/cv.pdf" download>
+              Download CV
+              <span class="btn-arrow">↓</span>
+            </a>
+            <a class="btn btn-ghost" href="#projects">
+              See the work
+              <span class="btn-arrow">↓</span>
+            </a>
+          </div>
+
+          <div class="hero-stats" data-exit role="list">
+            <div class="stat reveal" data-anim="pop" data-delay="0" role="listitem">
+              <span class="stat-num" data-count="50" data-suffix="+">0</span>
+              <span class="stat-label mono">projects shipped</span>
+            </div>
+            <div class="stat reveal" data-anim="pop" data-delay="0.12" role="listitem">
+              <span class="stat-num" data-count="30" data-suffix="+">0</span>
+              <span class="stat-label mono">happy clients</span>
+            </div>
+            <div class="stat reveal" data-anim="pop" data-delay="0.24" role="listitem">
+              <span class="stat-num" data-count="4" data-suffix="">0</span>
+              <span class="stat-label mono">years of building</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <h1 class="hero-name" data-exit>
-        <span class="name-ink" data-anim="chars">Amier</span>
-        <span class="name-echo" aria-hidden="true">Amier</span>
-      </h1>
-
-      <p class="hero-role mono" data-anim="wbrick" data-exit>
-        full-stack web developer&nbsp;·&nbsp;pixel-perfect front-ends&nbsp;·&nbsp;secure back-ends&nbsp;·&nbsp;e2e delivery
-      </p>
-
-      <div class="hero-icons" data-anim="group" data-exit>
-        <a class="mini-chip" href="https://github.com/Xerox1010555" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-1.94c-3.2.7-3.87-1.54-3.87-1.54-.53-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.72-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.8 1.18 1.83 1.18 3.09 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.05.78 2.13v3.16c0 .31.2.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
-        </a>
-        <a class="mini-chip" href="https://t.me/Amier1t5" target="_blank" rel="noopener noreferrer" aria-label="Telegram" title="Telegram">
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M21.9 3.3 1.9 11.2c-1.2.5-1.1 1.6-.2 1.9l5 1.6 1.9 5.9c.3.9 1 1 1.7.4l2.7-2.2 5.1 3.8c.9.5 1.5.2 1.7-.8l3-16c.2-1-.5-1.9-1.9-1.5zM8.5 13.7l8.9-5.6c.4-.3.8-.1.5.2l-7.3 6.6-.3 3.1-1.8-4.3z"/></svg>
-        </a>
-        <a class="mini-chip" href="https://wa.me/201008655235?text=Hello%20Amier%2C%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp">
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.6 14.2c-.2.7-1.2 1.3-2 1.3-.5 0-1.2 0-3.2-.9-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1-1.4-1-2.7s.7-1.9 1-2.2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6c-.1.2-.3.4-.1.7.2.3.8 1.4 1.8 2.2 1.2 1.1 2.2 1.4 2.5 1.6.3.1.5.1.6-.1l.9-1c.2-.2.4-.2.6-.1l2 1c.3.1.5.2.5.4.1.3.1.8-.1 1.3z"/></svg>
-        </a>
-        <a class="mini-chip" id="mailChip" href="mailto:abddo4443@gmail.com" aria-label="Email" title="Email">
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
-        </a>
-      </div>
-
-      <div class="hero-cta reveal" data-anim="group" data-exit>
-        <a class="btn btn-ink" href="assets/cv.pdf" download>
-          Download CV
-          <span class="btn-arrow">↓</span>
-        </a>
-        <a class="btn btn-ghost" href="#projects">
-          See the work
-          <span class="btn-arrow">↓</span>
-        </a>
-      </div>
-
-      <div class="hero-stats" data-exit role="list">
-        <div class="stat reveal" data-anim="pop" data-delay="0" role="listitem">
-          <span class="stat-num" data-count="50" data-suffix="+">0</span>
-          <span class="stat-label mono">projects shipped</span>
-        </div>
-        <div class="stat reveal" data-anim="pop" data-delay="0.12" role="listitem">
-          <span class="stat-num" data-count="30" data-suffix="+">0</span>
-          <span class="stat-label mono">happy clients</span>
-        </div>
-        <div class="stat reveal" data-anim="pop" data-delay="0.24" role="listitem">
-          <span class="stat-num" data-count="4" data-suffix="">0</span>
-          <span class="stat-label mono">years of building</span>
+        <!-- ——— the slayer stage (real-time 3D character) ——— -->
+        <div class="hero-stage" id="heroStage" aria-hidden="true" data-exit>
+          <i class="fig-halo" aria-hidden="true"></i>
+          <div class="fig-wrap">
+            <canvas class="fig-canvas" id="slayer"></canvas>
+            <div class="fig-fallback mono">刃 ⚔ 夢</div>
+          </div>
+          <i class="fig-floor" aria-hidden="true"></i>
+          <div class="fig-tag mono">
+            <b>amier</b>
+            <span data-tagline>slayer of slow builds</span>
+          </div>
         </div>
       </div>
     </section>
@@ -681,6 +689,8 @@
     <a class="totop mono" href="#top">back to top ↑</a>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
+<script src="three.min.js" defer></script>
+<script src="slayer3d.js" defer></script>
 </body>
 </html>

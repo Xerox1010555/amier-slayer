@@ -29,6 +29,7 @@
         if (ch === " ") span.innerHTML = "\u00A0";
         else span.textContent = ch;
         span.style.setProperty("--d", Math.round((ref.n * 42) + delayBase * 1000) + "ms");
+        span.style.setProperty("--sd", ref.n % 2 === 0 ? "1" : "-1");
         ref.n++;
         frag.appendChild(span);
       }
@@ -44,6 +45,43 @@
     }
     return document.createDocumentFragment();
   }
+
+  function pickNoRepeat(arr, key) {
+    var last = null;
+    try { last = sessionStorage.getItem("amier-" + key); } catch (e) { /* private mode */ }
+    var pool = arr.filter(function (v) { return v !== last; });
+    var v = pool.length ? pool[Math.floor(Math.random() * pool.length)] : arr[0];
+    try { sessionStorage.setItem("amier-" + key, v); } catch (e) { /* ignore */ }
+    return v;
+  }
+
+  /* —— welcome scene: a fresh intro every refresh (never repeats)
+        slash · ink · stamp · ember · blink —— */
+  var INTROS = ["slash", "ink", "stamp", "ember", "blink"];
+  if (!prefersReduced) {
+    document.documentElement.classList.add("intro-" + pickNoRepeat(INTROS, "intro"));
+  }
+
+  /* —— small flavor that also rerolls every refresh —— */
+  var kanjiGhost = document.querySelector(".kanji-ghost");
+  if (kanjiGhost) kanjiGhost.textContent = pickNoRepeat(["刃", "継", "心", "誠", "夢"], "kanji");
+
+  var sideJa = document.querySelector(".side-ja");
+  if (sideJa) sideJa.textContent = pickNoRepeat([
+    "アミエ · full-stack bladesmith",
+    "アミエ · code is a blade",
+    "ブレード · sharpen the pixels",
+    "アミエ · forged in the browser"
+  ], "sideja");
+
+  var tagline = document.querySelector("[data-tagline]");
+  if (tagline) tagline.textContent = pickNoRepeat([
+    "slayer of slow builds",
+    "kills jank on sight",
+    "forged pixel by pixel",
+    "ships gold, never rust",
+    "three.js approved"
+  ], "tag");
 
   function splitChars(el, delayBase) {
     if (el.dataset.split) return;
