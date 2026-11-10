@@ -1,6 +1,6 @@
 # Amier — amier-slayer 🗡️
 
-**Live site: https://xerox1010555.github.io/amier-slayer/** · **CV: [`assets/cv.pdf`](assets/cv.pdf)** · **GitHub: [Xerox1010555](https://github.com/Xerox1010555)**
+**Live site: https://xerox1010555.github.io/amier-slayer/** · **CV: [`assets/cv.pdf`](assets/cv.pdf)** · **GitHub: [Xerox1010555](https://github.com/Xerox1010555)** · **LinkedIn: [amier-osama](https://www.linkedin.com/in/amier-osama-a32645427)**
 Live client demos: [Azure Dashboard](https://azure-theta-87.vercel.app/) · [Carpentry & Decor](https://ok-web-blue.vercel.app)
 
 A **Demon Slayer ("Kimetsu no Yaiba") themed** personal portfolio — dark abyss scene, crimson ash embers, 刃 kanji ghost, one-time blade sweep, and a real-time **3D warrior (KayKit "Adventurers" Character Pack, CC0 by Kay Lousberg)** loaded from a vendored `.glb` with three.js — he plays his built-in idle, **greets you with a "Hi!" bubble** and a random flourish on every visit, **aims his sword with your cursor**, and **fights on demand**: click the stage, sweep your cursor across it, or watch his periodic auto-duel. A **different welcome intro is rolled on every refresh** (5 variants: slash / ink / stamp / ember / blink — always released after the curtain, so the hero is never stuck hidden). Built with **vanilla HTML / CSS / JavaScript only** — `three.js` (MIT) + `GLTFLoader` are vendored locally. Zero frameworks, zero build step, zero network dependencies at runtime (fonts aside).
