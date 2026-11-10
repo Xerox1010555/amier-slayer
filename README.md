@@ -1,5 +1,8 @@
 # Amier — amier-slayer 🗡️
 
+**Live site: https://xerox1010555.github.io/amier-slayer/** · **CV: [`assets/cv.pdf`](assets/cv.pdf)** · **GitHub: [Xerox1010555](https://github.com/Xerox1010555)**
+Live client demos: [Azure Dashboard](https://azure-theta-87.vercel.app/) · [Carpentry & Decor](https://ok-web-blue.vercel.app)
+
 A **Demon Slayer ("Kimetsu no Yaiba") themed** personal portfolio — dark abyss scene, crimson ash embers, 刃 kanji ghost, one-time blade sweep, and a real-time **3D warrior (KayKit "Adventurers" Character Pack, CC0 by Kay Lousberg)** loaded from a vendored `.glb` with three.js — he plays his built-in idle, **greets you with a "Hi!" bubble** and a random flourish on every visit, **aims his sword with your cursor**, and **fights on demand**: click the stage, sweep your cursor across it, or watch his periodic auto-duel. A **different welcome intro is rolled on every refresh** (5 variants: slash / ink / stamp / ember / blink — always released after the curtain, so the hero is never stuck hidden). Built with **vanilla HTML / CSS / JavaScript only** — `three.js` (MIT) + `GLTFLoader` are vendored locally. Zero frameworks, zero build step, zero network dependencies at runtime (fonts aside).
 
 ## Live preview
@@ -39,7 +42,7 @@ amier-slayer/
 
 1. **Hero** — professional split layout: copy column left (eyebrow pill, bone name with echo, wbrick role, social chips, Download CV, animated stat counters), full **3D slayer stage** right (KayKit warrior GLB with idle animation, **cursor-tracking sword aim**, cursor parallax, **click-to-attack / hover-provoked duel / periodic auto-duel**, crimson halo, floor glow, **"Hi!" greeting bubble**, placard with rotating tagline). Abyss scene with embers, kanji ghost 刃, blade sweep, monitor annotations, and a randomized welcome intro on every visit. Graceful `「刃 ⚔ 夢」` fallback badge if WebGL is unavailable. Fully responsive: split holds on tablets, stacks under 900px **with the slayer lifted into the first screen** (`display: contents` re-order), nav folds below 640px.
 2. **Marquee** — dark tech ticker with ember-red diamonds.
-3. **About / Experience / Stack / Projects / Reviews / Writing** — light editorial paper sections with crimson accents, char-cascade headings, transient swipe bars, ledger builds, CSS-only project shots.
+3. **About / Experience / Stack / Projects / Reviews** — light editorial paper sections with crimson accents, char-cascade headings, transient swipe bars, ledger builds, CSS-only project shots; every non-live project card links to its public GitHub source (`view code ↗`).
 4. **Get in touch** — dark blade chamber: mini contact rows with copy button, send button, keyword ticker, the big "LET'S BUILD SOMETHING [IMPACTFUL] TOGETHER." stamp statement, five channel cards (Telegram / LinkedIn / Email / GitHub / WhatsApp) with crimson hover + sparkle confetti, availability badge, reverse footer ticker.
 
 ## Motion system ("bricks" rule)
